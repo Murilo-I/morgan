@@ -28,6 +28,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -41,6 +44,7 @@
     <option name="width" value="1525" />
     <option name="height" value="965" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -54,16 +58,14 @@
               <item name="morgan" type="b2602c69:ProjectViewProjectNode" />
               <item name="morgan" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="morgan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morgan" type="462c0819:PsiDirectoryNode" />
-              <item name="audios" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
     </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
