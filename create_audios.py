@@ -1,4 +1,9 @@
 from gtts import gTTS
+from playsound import playsound
 
-tss = gTTS('Olá, meu nome é Morgan', lang='pt-br')
-tss.save('audios/hello.mp3')
+def create(audio, name):
+    tss = gTTS(audio, lang='pt-br')
+    tss.save('audios/'+name+'.mp3')
+    playsound('audios/'+name+'.mp3')
+
+create('Salve cachorro','salve')
