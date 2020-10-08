@@ -22,7 +22,7 @@ def monitora_audio():
 
                 if hotword in trigger:
                     print('Comando: ', trigger)
-                    responde('feedback')
+                    responde('Resposta1')
                     # comandos a executar #
                     break
 
