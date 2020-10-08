@@ -1,5 +1,5 @@
 import speech_recognition as sr
-
+from playsound import playsound
 
 # CONFIGURAÇÕES #
 
@@ -22,6 +22,7 @@ def monitora_audio():
 
                 if hotword in trigger:
                     print('Comando: ', trigger)
+                    responde('feedback')
                     # comandos a executar #
                     break
 
@@ -30,5 +31,12 @@ def monitora_audio():
             except sr.RequestError as e:
                 print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
+    return trigger
+
+def responde(arquivo):
+    playsound('audios/' + arquivo + '.mp3')
 
 monitora_audio()
+
+
+
