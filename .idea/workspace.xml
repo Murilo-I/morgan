@@ -25,6 +25,7 @@
     <list default="true" id="e15aabf0-8099-4355-91ca-83ba1d7d2632" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Morgan.py" beforeDir="false" afterPath="$PROJECT_DIR$/Morgan.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_audios.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_audios.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +71,7 @@
       </console-settings>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Morgan">
+  <component name="RunManager" selected="Python.create_audios">
     <configuration name="Morgan" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="morgan" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -116,8 +117,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Morgan" />
         <item itemvalue="Python.create_audios" />
+        <item itemvalue="Python.Morgan" />
       </list>
     </recent_temporary>
   </component>
@@ -161,6 +162,7 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="505" y="174" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1600285528099" />
+<<<<<<< HEAD
     <state width="1364" height="195" key="GridCell.Tab.0.bottom" timestamp="1602192266419">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -181,6 +183,28 @@
     </state>
     <state width="1308" height="139" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1600287997766" />
     <state width="1364" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602192266418" />
+=======
+    <state width="1345" height="178" key="GridCell.Tab.0.bottom" timestamp="1602192249770">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1602192249769" />
+    <state width="1364" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601298628793" />
+    <state width="1345" height="178" key="GridCell.Tab.0.center" timestamp="1602192249769">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1602192249769" />
+    <state width="1364" height="195" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601298628793" />
+    <state width="1345" height="178" key="GridCell.Tab.0.left" timestamp="1602192249769">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1602192249769" />
+    <state width="1364" height="195" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601298628793" />
+    <state width="1345" height="178" key="GridCell.Tab.0.right" timestamp="1602192249769">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1602192249769" />
+    <state width="1364" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601298628793" />
+>>>>>>> cf0306e1cde8ac2b2a874e18ed79bfbb5ab00a81
     <state x="298" y="0" width="998" height="728" key="SettingsEditor" timestamp="1600888339848">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
