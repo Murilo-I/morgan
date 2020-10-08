@@ -30,5 +30,4 @@ def monitora_audio():
             except sr.RequestError as e:
                 print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
-
 monitora_audio()
