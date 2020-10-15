@@ -23,10 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e15aabf0-8099-4355-91ca-83ba1d7d2632" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/morgan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/morgan.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Google import.py" beforeDir="false" afterPath="$PROJECT_DIR$/Morgan.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,6 +142,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="532" y="223" key="#Scopes" timestamp="1599674620883">
@@ -171,13 +169,13 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1308" height="139" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1600287997766" />
-    <state x="265" y="0" width="998" height="728" key="SettingsEditor" timestamp="1600286527739">
+    <state x="265" y="0" width="998" height="728" key="SettingsEditor" timestamp="1600888076524">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="265" y="0" width="998" height="728" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1600286527739" />
-    <state x="550" y="105" width="672" height="678" key="search.everywhere.popup" timestamp="1600286497333">
+    <state x="265" y="0" width="998" height="728" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1600888076524" />
+    <state x="550" y="105" width="673" height="678" key="search.everywhere.popup" timestamp="1600887951628">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="550" y="105" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1600286497333" />
+    <state x="550" y="105" width="673" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1600887951628" />
   </component>
 </project>
