@@ -6,4 +6,5 @@ def create(audio, name):
     tss.save('audios/'+name+'.mp3')
     playsound('audios/'+name+'.mp3')
 
-create('Espera aí', 'Resposta1')
+create('Eu não sou paga para isso', 'Resposta2')
+

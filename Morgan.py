@@ -44,12 +44,18 @@ def responde(arquivo):
 def cria_audio(mensagem):
     tss = gTTS(mensagem, lang='pt-br')
     tss.save('audios/mensagem.mp3')
+    print('Morgan ' + mensagem)
     playsound('audios/mensagem.mp3')
 
 
 def executa_comandos(trigger):
     if 'notícias' in trigger:
         ultimas_noticias()
+    else:
+        mensagem = trigger.strip(hotword)
+        cria_audio(mensagem)
+        print('Comando inválido:', mensagem)
+        responde('Resposta2')
 
 
 # FUNÇÕES COMANDOS #
@@ -59,7 +65,6 @@ def ultimas_noticias():
     noticias = BeautifulSoup(site.text, 'html.parser')
     for item in noticias.findAll('item')[:1]:
         mensagem = item.title.text
-        print('Última notícia: ' + mensagem)
         cria_audio(mensagem)
 
 
