@@ -3,6 +3,7 @@ from playsound import playsound
 from requests import get
 from bs4 import BeautifulSoup
 from gtts import gTTS
+import random
 
 # CONFIGURAÇÕES #
 
@@ -55,7 +56,8 @@ def executa_comandos(trigger):
         mensagem = trigger.strip(hotword)
         cria_audio(mensagem)
         print('Comando inválido:', mensagem)
-        responde('Resposta2')
+        r = random.randint(2, 3)
+        responde('Resposta' + str(r))
 
 
 # FUNÇÕES COMANDOS #
@@ -63,9 +65,13 @@ def executa_comandos(trigger):
 def ultimas_noticias():
     site = get('https://news.google.com/rss?hl=pt-BR&g=BR&ceid=BR:pt-419')
     noticias = BeautifulSoup(site.text, 'html.parser')
-    for item in noticias.findAll('item')[:1]:
-        mensagem = item.title.text
-        cria_audio(mensagem)
+    manchetes = []
+    for item in noticias.findAll('item')[:9]:
+        manchetes.append(item)
+
+    r = random.randint(0, 9)
+    mensagem = manchetes[r].title.text
+    cria_audio(mensagem)
 
 
 def main():
