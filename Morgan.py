@@ -80,7 +80,7 @@ def ultimas_noticias():
     for item in noticias.findAll('item')[:9]:
         manchetes.append(item)
 
-    r = random.randint(0, 9)
+    r = random.randint(1, 9)
     mensagem = manchetes[r].title.text
     cria_audio(mensagem)
 
