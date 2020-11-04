@@ -1,8 +1,10 @@
 import speech_recognition as sr
+from gtts import gTTS
 from playsound import playsound
 from requests import get
 from bs4 import BeautifulSoup
-from gtts import gTTS
+import random
+from play_music import whato_play
 
 # CONFIGURAÇÕES #
 
@@ -44,18 +46,29 @@ def responde(arquivo):
 def cria_audio(mensagem):
     tss = gTTS(mensagem, lang='pt-br')
     tss.save('audios/mensagem.mp3')
-    print('Morgan ' + mensagem)
+    print('Morgan' + mensagem)
     playsound('audios/mensagem.mp3')
 
 
 def executa_comandos(trigger):
     if 'notícias' in trigger:
         ultimas_noticias()
+
+    elif 'toca' in trigger:
+        whato_play(trigger)
+
+    elif 'clima agora' in trigger:
+        previsao_tempo(tempo=True)
+
+    elif 'tempo hoje' in trigger:
+        previsao_tempo(minmax=True)
+
     else:
         mensagem = trigger.strip(hotword)
         cria_audio(mensagem)
         print('Comando inválido:', mensagem)
-        responde('Resposta2')
+        r = random.randint(2, 3)
+        responde('Resposta' + str(r))
 
 
 # FUNÇÕES COMANDOS #
@@ -63,9 +76,33 @@ def executa_comandos(trigger):
 def ultimas_noticias():
     site = get('https://news.google.com/rss?hl=pt-BR&g=BR&ceid=BR:pt-419')
     noticias = BeautifulSoup(site.text, 'html.parser')
-    for item in noticias.findAll('item')[:1]:
-        mensagem = item.title.text
-        cria_audio(mensagem)
+    manchetes = []
+    for item in noticias.findAll('item')[:9]:
+        manchetes.append(item)
+
+    r = random.randint(0, 9)
+    mensagem = manchetes[r].title.text
+    cria_audio(mensagem)
+
+
+def previsao_tempo(tempo=False, minmax=False):
+    site = get(
+        'http://api.openweathermap.org/data/2.5/weather?q=barueri&appid=f3df126f823c2d5eadd1de251880b7b1&units=metric'
+        '&lang=pt')
+
+    clima = site.json()
+    temp = clima['main']['temp']
+    min = clima['main']['temp_min']
+    max = clima['main']['temp_max']
+    desc = clima['weather'][0]['description']
+    mensagem = ''
+
+    if tempo:
+        mensagem = f'Agora fazem {temp} graus com {desc}'
+    elif minmax:
+        mensagem = f'Hoje a mínima é de {min} e a máxima de {max}'
+
+    cria_audio(mensagem)
 
 
 def main():
