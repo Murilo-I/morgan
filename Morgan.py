@@ -46,7 +46,7 @@ def responde(arquivo):
 def cria_audio(mensagem):
     tss = gTTS(mensagem, lang='pt-br')
     tss.save('audios/mensagem.mp3')
-    print('Morgan' + mensagem)
+    print('Morgan: ' + mensagem)
     playsound('audios/mensagem.mp3')
 
 
@@ -63,10 +63,13 @@ def executa_comandos(trigger):
     elif 'tempo hoje' in trigger:
         previsao_tempo(minmax=True)
 
+    elif '+' or '-' or 'x' or '/' in trigger:
+        funcoes_matematicas(trigger)
+
     else:
         mensagem = trigger.strip(hotword)
         cria_audio(mensagem)
-        print('Comando inválido:', mensagem)
+        print('Comando inválido: ', mensagem)
         r = random.randint(2, 3)
         responde('Resposta' + str(r))
 
@@ -92,17 +95,78 @@ def previsao_tempo(tempo=False, minmax=False):
 
     clima = site.json()
     temp = clima['main']['temp']
-    min = clima['main']['temp_min']
-    max = clima['main']['temp_max']
+    min_temp = clima['main']['temp_min']
+    max_temp = clima['main']['temp_max']
     desc = clima['weather'][0]['description']
     mensagem = ''
 
     if tempo:
         mensagem = f'Agora fazem {temp} graus com {desc}'
     elif minmax:
-        mensagem = f'Hoje a mínima é de {min} e a máxima de {max}'
+        mensagem = f'Hoje a mínima é de {min_temp} e a máxima de {max_temp}'
 
     cria_audio(mensagem)
+
+
+def funcoes_matematicas(trigger: str):
+    error_msg = 'desculpa, não consegui fazer a conta'
+
+    if '+' in trigger:
+        sentenca = trigger.split(sep='+')
+        parte1 = sentenca[0].split()
+
+        num1 = parte1[-1]
+        num2 = sentenca[1].lstrip()
+
+        if num1.isdigit() & num2.isdigit():
+            result = float(num1) + float(num2)
+            mensagem = f'{num1} mais {num2} é igual a {result}'
+            cria_audio(mensagem)
+        else:
+            cria_audio(error_msg)
+
+    elif '-' in trigger:
+        sentenca = trigger.split(sep='-')
+        parte1 = sentenca[0].split()
+
+        num1 = parte1[-1]
+        num2 = sentenca[1].lstrip()
+
+        if num1.isdigit() & num2.isdigit():
+            result = float(num1) - float(num2)
+            mensagem = f'{num1} menos {num2} é igual a {result}'
+            cria_audio(mensagem)
+        else:
+            cria_audio(error_msg)
+
+    elif 'x' in trigger:
+        sentenca = trigger.split(sep='x')
+        parte1 = sentenca[0].split()
+
+        num1 = parte1[-1]
+        num2 = sentenca[1].lstrip()
+
+        if num1.isdigit() & num2.isdigit():
+            result = float(num1) * float(num2)
+            print(result)
+            mensagem = f'{num1} vezes {num2} é igual a {result}'
+            cria_audio(mensagem)
+        else:
+            cria_audio(error_msg)
+
+    elif '/' in trigger:
+        sentenca = trigger.split(sep='/')
+        parte1 = sentenca[0].split()
+
+        num1 = parte1[-1]
+        num2 = sentenca[1].lstrip()
+
+        if num1.isdigit() & num2.isdigit():
+            result = float(num1) / float(num2)
+            mensagem = f'{num1} dividido por {num2} é igual a {result}'
+            cria_audio(mensagem)
+        else:
+            cria_audio(error_msg)
 
 
 def main():
