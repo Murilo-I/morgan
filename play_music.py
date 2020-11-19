@@ -53,6 +53,57 @@ def whato_play(trigger):
     elif 'pagode' in trigger:
         playlists('pagode')
 
+    elif 'akon' in trigger:
+        playlists('Akon')
+
+    elif 'marron five' in trigger:
+        playlists('Marron 5')
+
+    elif '24kGoldn' in trigger:
+        playlists('24kGoldn')
+
+    elif 'juice wrld' in trigger:
+        playlists('Juice WRLD')
+
+    elif 'roddy ricch' in trigger:
+        playlists('Roddy Ricch')
+
+    elif 'drake' in trigger:
+        playlists('Drake')
+
+    elif 'dababy' in trigger:
+        playlists('Dababy')
+
+    elif 'travis scott' in trigger:
+        playlists('Travis Scott')
+
+    elif 'xxxtentacion' in trigger:
+        playlists('XXXTENTACION')
+
+    elif 'powfu' in trigger:
+        playlists('Powfu')
+
+    elif 'lil nas x' in trigger:
+        playlists('Lil Nas X')
+
+    elif 'michael jackson' in trigger:
+        playlists('Michael Jackson')
+
+    elif 'bruno mars' in trigger:
+        playlists('Bruno Mars')
+
+    elif 'katy perry' in trigger:
+        playlists('Katy Perry')
+
+    elif 'the killers' in trigger:
+        playlists('The Killers')
+
+    elif 'avicii' in trigger:
+        playlists('Avicii')
+
+    elif 'coldplay' in trigger:
+        playlists('Coldplay')
+
 
 def playlists(album):
     if album == 'pop smoke':
@@ -105,3 +156,54 @@ def playlists(album):
 
     elif album == 'pagode':
         browser.open('https://www.youtube.com/watch?v=c4XeTP11EI8&list=PLws-Q6lwJkI1jq4kJbugdcAJryK2u_vi1&index=1')
+
+    elif album == 'Akon':
+        browser.open('https://www.youtube.com/watch?v=6EEW-9NDM5k&list=PL2YL6XQrENMCGC5oJjjK4kOyGirDN-dzr&index=1')
+
+    elif album == 'Maroon 5':
+        browser.open('https://www.youtube.com/watch?v=aJOTlE1K90k&list=PLIXR_3Q6owLZhQUf1-sfJ8-EX4can3hIe&index=1')
+
+    elif album == '24kGoldn':
+        browser.open('https://www.youtube.com/watch?v=GrAchTdepsU&list=PLnm5twXf5qy0DE4nLTU04Jf_s-4u1VTGU&index=1')
+
+    elif album == 'Juice WRLD':
+        browser.open('https://www.youtube.com/watch?v=C5i-UnuUKUI&list=PL-JoUlugMMxiLdkHd537jZefZ9walk3Wp&index=1')
+
+    elif album == 'Roddy Ricch':
+        browser.open('https://www.youtube.com/watch?v=uLHqpjW3aDs&list=PLMlu2IEkz0RG9qmicsRrEU5lM9rwOA1YB&index=1')
+
+    elif album == 'Drake':
+        browser.open('https://www.youtube.com/watch?v=JFm7YDVlqnI&list=PL4TrGu5rwzH-1r8e-7Qx6b3DqyhNCfj24&index=1')
+
+    elif album == 'Dababy':
+        browser.open('https://www.youtube.com/watch?v=4PDpVNKZgKg&list=PLgZ4DdsdoXP36dSuJ7iuPXimFj03W6hbt&index=1')
+
+    elif album == 'Travis Scott':
+        browser.open('https://www.youtube.com/watch?v=6ONRf7h3Mdk&list=PLSf4VENc-Z0-ehsHkDP9gZkWQup2gY3ec&index=1')
+
+    elif album == 'XXXTENTACION':
+        browser.open('https://www.youtube.com/watch?v=pgN-vvVVxMA&list=PL-95FHe5Zg6dHA_r6aPZOAQQf5EO3eRlb&index=3')
+
+    elif album == 'Powfu':
+        browser.open('https://www.youtube.com/watch?v=jJPMnTXl63E&list=PLQjiyiQCvCjsSbZjXhLjK1W8xBAd-4Stw&index=1')
+
+    elif album == 'Lil Nas X':
+        browser.open('https://www.youtube.com/watch?v=7ysFgElQtjI&list=PLbNKjAnSNvqqJwrSZebFQgIR71JqrPHWA&index=1')
+
+    elif album == 'Michael Jackson':
+        browser.open('https://www.youtube.com/watch?v=Zi_XLOBDo_Y&list=PLYagrqIg-kgStAOXbNKf2gl2zq3yBY8Qy&index=1')
+
+    elif album == 'Bruno Mars':
+        browser.open('https://www.youtube.com/watch?v=fLexgOxsZu0&list=PLI6Wzy3GVpd4PKUuiOgngHSZCiWXZt_Kd&index=1')
+
+    elif album == 'Katy Perry':
+        browser.open('https://www.youtube.com/watch?v=CevxZvSJLk8&list=PLwn8mT6-a4yIbVXCgzsTUfwC0DQ8-MtMf&index=1')
+
+    elif album == 'The Killers':
+        browser.open('https://www.youtube.com/watch?v=RIZdjT1472Y&list=PLnG56ODjnHyJJBMFnWs9BKhmVt00AxmNL&index=3')
+
+    elif album == 'Avicii':
+        browser.open('https://www.youtube.com/watch?v=IcrbM1l_BoI&list=PL8MoRdamk_2sH9SE4RcvVLRe3Ba40AvNc&index=1')
+
+    elif album == 'Coldplay':
+        browser.open('https://www.youtube.com/watch?v=RB-RcX5DS5A&list=PLzyYbaYKbahnNE3DYx4f9XfA_QhhDlJh5&index=1')

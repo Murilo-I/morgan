@@ -66,6 +66,12 @@ def executa_comandos(trigger):
     elif '+' or '-' or 'x' or '/' in trigger:
         funcoes_matematicas(trigger)
 
+    elif 'curiosidade' in trigger:
+        curiosidade()
+
+    elif 'piada' in trigger:
+        piada()
+
     else:
         mensagem = trigger.strip(hotword)
         cria_audio(mensagem)
@@ -167,6 +173,16 @@ def funcoes_matematicas(trigger: str):
             cria_audio(mensagem)
         else:
             cria_audio(error_msg)
+
+
+def curiosidade():
+    r = random.randint(1, 3)
+    responde('Curiosidade' + str(r))
+
+
+def piada():
+    r = random.randint(1, 3)
+    responde('Piada' + str(r))
 
 
 def main():

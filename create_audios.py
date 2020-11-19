@@ -6,5 +6,5 @@ def create(audio, name):
     tss.save('audios/'+name+'.mp3')
     playsound('audios/'+name+'.mp3')
 
-create('não posso te ajudar com isso', 'Resposta3')
+create('o lugar naturalmente mais perigoso da terra é o vale da morte, um deserto com temperatura média de 57° na Califórnia', 'Curiosidade3')
 
