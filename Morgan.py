@@ -21,7 +21,7 @@ def monitora_audio():
             audio = microfone.listen(source)
 
             try:
-                # trigger -> PALAVRA CHAVE(morgan), esperando comando #
+                # trigger -> PALAVRAS CHAVES NA FRASE #
                 trigger = microfone.recognize_google(audio, language="pt-BR")
                 trigger = trigger.lower()
 
@@ -109,7 +109,7 @@ def previsao_tempo(tempo=False, minmax=False):
     if tempo:
         mensagem = f'Agora fazem {temp} graus com {desc}'
     elif minmax:
-        mensagem = f'Hoje a mínima é de {min_temp} e a máxima de {max_temp}'
+        mensagem = f'Hoje a mínima será de {min_temp} e a máxima de {max_temp}'
 
     cria_audio(mensagem)
 
