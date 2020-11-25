@@ -4,7 +4,10 @@ from playsound import playsound
 from requests import get
 from bs4 import BeautifulSoup
 import random
+import schedule
+import time
 from play_music import whato_play
+
 
 # CONFIGURAÇÕES #
 
@@ -71,6 +74,9 @@ def executa_comandos(trigger):
 
     elif 'piada' in trigger:
         piada()
+
+    elif 'defina um alarme' in trigger:
+        agenda(trigger)
 
     else:
         mensagem = trigger.strip(hotword)
@@ -185,9 +191,18 @@ def piada():
     responde('Piada' + str(r))
 
 
+def agenda(trigger):
+    sentenca = trigger.split(sep='para as')
+    hora = sentenca[1].lstrip()
+    mensagem = f'você tem um compromisso as {hora}'
+    schedule.every().day.at(hora).do(cria_audio(mensagem))
+
+
 def main():
     while True:
         monitora_audio()
+        schedule.run_pending()
+        time.sleep(5)
 
 
 main()
