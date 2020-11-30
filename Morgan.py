@@ -4,14 +4,26 @@ from playsound import playsound
 from requests import get
 from bs4 import BeautifulSoup
 import random
-import schedule
-import time
+from datetime import datetime
 from play_music import whato_play
 
 
 # CONFIGURAÇÕES #
 
 hotword = 'morgan'
+triggers = [
+    'notícias',
+    'toca',
+    'piada',
+    'curiosidade',
+    'horas são',
+    'você está aí',
+    'você é surda',
+    'tempo hoje',
+    'clima agora',
+    'defina um alarme',
+    '+', '-', 'x', '/'
+]
 
 
 # FUNÇÕES PRINCIPAIS #
@@ -30,7 +42,6 @@ def monitora_audio():
 
                 if hotword in trigger:
                     print('Comando: ' + trigger)
-                    responde('Resposta1')
                     executa_comandos(trigger)
                     break
 
@@ -55,30 +66,46 @@ def cria_audio(mensagem):
 
 def executa_comandos(trigger):
     if 'notícias' in trigger:
+        responde('Resposta1')
         ultimas_noticias()
 
     elif 'toca' in trigger:
+        responde('Resposta1')
         whato_play(trigger)
-
-    elif 'clima agora' in trigger:
-        previsao_tempo(tempo=True)
-
-    elif 'tempo hoje' in trigger:
-        previsao_tempo(minmax=True)
-
-    elif '+' or '-' or 'x' or '/' in trigger:
-        funcoes_matematicas(trigger)
-
-    elif 'curiosidade' in trigger:
-        curiosidade()
 
     elif 'piada' in trigger:
         piada()
 
-    elif 'defina um alarme' in trigger:
-        agenda(trigger)
+    elif 'curiosidade' in trigger:
+        curiosidade()
 
-    else:
+    elif 'horas são' in trigger:
+        horacao()
+
+    elif 'você está aí' in trigger:
+        tonao()
+
+    elif 'você é surda' in trigger:
+        surda()
+
+    elif 'clima agora' in trigger:
+        responde('Resposta1')
+        previsao_tempo(tempo=True)
+
+    elif 'tempo hoje' in trigger:
+        responde('Resposta1')
+        previsao_tempo(minmax=True)
+
+    elif 'defina um alarme' in trigger:
+        responde('Resposta1')
+        agenda(trigger)
+        responde('Resposta4')
+
+    elif '+' or '-' or 'x' or '/' in trigger:
+        responde('Resposta1')
+        funcoes_matematicas(trigger)
+
+    if trigger not in triggers:
         mensagem = trigger.strip(hotword)
         cria_audio(mensagem)
         print('Comando inválido: ', mensagem)
@@ -92,7 +119,7 @@ def ultimas_noticias():
     site = get('https://news.google.com/rss?hl=pt-BR&g=BR&ceid=BR:pt-419')
     noticias = BeautifulSoup(site.text, 'html.parser')
     manchetes = []
-    for item in noticias.findAll('item')[:9]:
+    for item in noticias.findAll('item')[:10]:
         manchetes.append(item)
 
     r = random.randint(1, 9)
@@ -195,14 +222,28 @@ def agenda(trigger):
     sentenca = trigger.split(sep='para as')
     hora = sentenca[1].lstrip()
     mensagem = f'você tem um compromisso as {hora}'
-    schedule.every().day.at(hora).do(cria_audio(mensagem))
+    cria_audio(mensagem)
+
+
+def horacao():
+    horario = datetime.now().strftime('%H:%M')
+    mensagem = 'Agora são ' + horario
+    cria_audio(mensagem)
+
+
+def tonao():
+    mensagem = 'Não, to não, eu me demiti'
+    cria_audio(mensagem)
+
+
+def surda():
+    mensagem = 'Oi, desculpa, estava jogando free fire, o que você quer'
+    cria_audio(mensagem)
 
 
 def main():
     while True:
         monitora_audio()
-        schedule.run_pending()
-        time.sleep(5)
 
 
 main()
