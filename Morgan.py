@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 import random
 from datetime import datetime
 from play_music import whato_play
+from open_browsers import abrir
 
 
 # CONFIGURAÇÕES #
@@ -72,6 +73,9 @@ def executa_comandos(trigger):
     elif 'toca' in trigger:
         responde('Resposta1')
         whato_play(trigger)
+
+    elif 'abrir' in trigger:
+        abrir(trigger)
 
     elif 'piada' in trigger:
         piada()
@@ -221,7 +225,7 @@ def piada():
 def agenda(trigger):
     sentenca = trigger.split(sep='para as')
     hora = sentenca[1].lstrip()
-    mensagem = f'você tem um compromisso as {hora}'
+    mensagem = f'você tem um compromisso as {hora}, ou seja, agora'
     cria_audio(mensagem)
 
 
