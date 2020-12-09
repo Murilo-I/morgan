@@ -221,7 +221,7 @@ def piada():
 def agenda(trigger):
     sentenca = trigger.split(sep='para as')
     hora = sentenca[1].lstrip()
-    mensagem = f'você tem um compromisso as {hora}'
+    mensagem = f'você tem um compromisso as {hora}, ou seja, agora'
     cria_audio(mensagem)
 
 
