@@ -3,6 +3,7 @@ from gtts import gTTS
 from playsound import playsound
 from requests import get
 from bs4 import BeautifulSoup
+from flask import Flask, render_template, redirect
 import random
 from datetime import datetime
 from play_music import whato_play
@@ -11,6 +12,7 @@ from open_browsers import abrir
 
 # CONFIGURAÇÕES #
 
+app = Flask(__name__)
 hotword = 'morgan'
 triggers = [
     'notícias',
@@ -82,6 +84,15 @@ def executa_comandos(trigger):
 
     elif 'curiosidade' in trigger:
         curiosidade()
+
+    elif 'adolescente' in trigger:
+        adolescente()
+
+    elif 'me irrita' in trigger:
+        irritando()
+
+    elif 'pedra' and 'papel' and 'tesoura' in trigger:
+        jokenpo()
 
     elif 'horas são' in trigger:
         horacao()
@@ -222,6 +233,24 @@ def piada():
     responde('Piada' + str(r))
 
 
+def missao():
+    r = random.randint(1, 3)
+    responde('mao' + str(r))
+
+
+def jokenpo():
+    r = random.randint(1, 3)
+    responde('missao' + str(r))
+
+
+def adolescente():
+    responde('adolescente')
+
+
+def irritando():
+    responde('irritando')
+
+
 def agenda(trigger):
     sentenca = trigger.split(sep='para as')
     hora = sentenca[1].lstrip()
@@ -250,4 +279,16 @@ def main():
         monitora_audio()
 
 
-main()
+# INTEGRAÇÃO WEB #
+
+@app.route('/')
+def index():
+    return redirect('/morgan_assistant')
+
+
+@app.route('/morgan_assistant')
+def naweb():
+    return render_template('')
+
+
+app.run(debug=True)
