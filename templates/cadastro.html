@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='morgan_icon.png') }}">
+</head>
+<body>
+    <form class="box" action="{{ url_for('criar') }}" method="post">
+        <h1>Cadastro</h1>
+        <br>
+        <div class="social.media">
+            <ul class="list-social-media">
+                <a href="https://pt-br.facebook.com/login/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://accounts.google.com/ServiceLogin/signinchooser?service=accountsettings&continue=https%3A%2F%2Fmyaccount.google.com%3Futm_source%3Daccount-marketing-page%26utm_medium%3Dgo-to-account-button&flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="fab fa-google-plus-g"></i></a>
+                <a href="https://www.instagram.com/?hl=pt-br"><i class="fab fa-instagram"></i></a>
+             </ul>
+        </div>
+        <br>
+        <p class="description-primary">Coloque seus dados pessoais</p>
+        <input required type="text" name="username" placeholder="Username">
+        <input required type="email" name="email" placeholder="Email">
+        <input required type="password" name="senha" placeholder="Senha">
+        <input required type="password" name="confirma" placeholder="Confirmar senha">
+        <input type="submit" value="Criar conta">
+    </form>
+</body>
+</html>

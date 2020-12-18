@@ -3,7 +3,6 @@ from gtts import gTTS
 from playsound import playsound
 from requests import get
 from bs4 import BeautifulSoup
-from flask import Flask, render_template, redirect
 import random
 from datetime import datetime
 from play_music import whato_play
@@ -12,7 +11,6 @@ from open_browsers import abrir
 
 # CONFIGURAÇÕES #
 
-app = Flask(__name__)
 hotword = 'morgan'
 triggers = [
     'notícias',
@@ -277,18 +275,3 @@ def surda():
 def main():
     while True:
         monitora_audio()
-
-
-# INTEGRAÇÃO WEB #
-
-@app.route('/')
-def index():
-    return redirect('/morgan_assistant')
-
-
-@app.route('/morgan_assistant')
-def naweb():
-    return render_template('')
-
-
-app.run(debug=True)

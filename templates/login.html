@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='morgan_icon.png') }}">
+</head>
+<body>
+    <form class="box" action="{{ url_for('autenticar') }}" method="post">
+        <h1>Login</h1>
+        <br>
+        <div class="social.media">
+            <ul class="list-social-media">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+             </ul>
+        </div>
+        <br>
+        <p class="description-primary">Ou conecte-se com o seu cadastro</p>
+        <input type="hidden" name="logado" value="{{ logado or url_for('index') }}">
+        <input required type="text" name="username" placeholder="Username">
+        <input required type="password" name="senha" placeholder="Senha">
+        <a href="{{ url_for('mudar_senha') }}">Esqueceu a senha?</a>
+        <input type="submit" value="Login">
+        <p>Não tem conta? <a href="{{ url_for('registrar') }}">Cadastre-se</a></p>
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="erro" style="color: white;
+                    background-color: red;
+                    padding: 10px;
+                    display: inline-block;
+                    position: fixed;
+                    bottom: 20px;
+                    left: 20px;">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script>
+        $().ready(function() {
+			setTimeout(function() {
+				$('.erro').hide();
+			}, 3000);
+		});
+    </script>
+</body>
+</html>
