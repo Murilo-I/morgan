@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='morgan_icon.png') }}">
+    <title>Assistant Morgan</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="btn-menu">
+                <label for="btn-menu">☰</label>
+            </div>
+            <nav class="menu">
+                <a href="#">Início</a>
+                <a href="#">Outros</a>
+                <a href="#">Contato</a>
+            </nav>
+        </div>
+    </header>
+    <div class="capa"></div>
+    <div class="logo">
+        <img class="logo-morgan" src="{{ url_for('static', filename='morgan_icon.png') }}">
+    </div>
+    <hr>
+    <!--	--------------->
+    <input type="checkbox" id="btn-menu">
+    <div class="container-menu">
+        <div class="cont-menu">
+            <nav>
+                <a id="soft-link" href="#cards">Quem somos?</a>
+                <a href="{{ url_for('login') }}">Cadastro</a>
+                <a href="#">Lista de funcionalidades</a>
+                <a href="#">...</a>
+                <a href="#">...</a>
+                <a href="#">...</a>
+            </nav>
+            <label for="btn-menu">✖️</label>
+        </div>
+    </div>
+    <a href="{{ url_for('rodar') }}" class="micro"> <img class="icon" src="{{ url_for('static', filename='micro.png') }}"></a>
+
+    <div class="container2">
+        <div class="parallax" data-parallax="scroll" data-image-src="{{ url_for('static', filename='bg.jpeg') }}" data-z-index="1"></div>
+        <div id="cards" class="cards">
+            <section class="card">
+                <h2>QUEM</h2>
+                <p>somos?</p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, nisi? Dicta, deleniti eveniet.
+                Praesentium voluptatum adipisci dolores sint earum ratione, recusandae a sit doloribus totam corporis!
+                Expedita ipsam dolore laborum.
+                <br>
+                <div class="popover" onclick="invisible('noshist')">
+                    <button onclick="visible('noshist')" class="b-hist">NOSSA HISTÓRIA</button>
+                    <div class="noshist">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, nesciunt odio
+                        ratione minima atque necessitatibus error eaque odit, laboriosam vel a possimus commodi mollitia
+                        cum aliquid reiciendis cumque ipsum ducimus!
+                    </div>
+                </div>
+            </section>
+            <section class="card">
+                <h2>O QUE</h2>
+                <p>fazemos?</p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste delectus nam quibusdam ea dolorem, alias
+                cupiditate, qui, omnis autem modi velit. Ad ab officiis ratione expedita nam! Ut, architecto
+                praesentium.
+                <br>
+                <div class="popover" onclick="invisible('serviços')">
+                    <button onclick="visible('serviços')" class="b-serv">NOSSOS SERVIÇOS </button>
+                    <div class="serviços">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, nobis maxime. Esse porro
+                        architecto voluptatem expedita ad a nihil tempora blanditiis autem exercitationem, repudiandae
+                        quod.
+                        Sit voluptatibus non tempora voluptates.
+                    </div>
+                </div>
+            </section>
+            <section class="card">
+                <h2>COMO</h2>
+                <p>se associar?</p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum animi obcaecati ab error excepturi tempora
+                reiciendis illum deleniti atque voluptatum. Itaque cum ad excepturi provident consequuntur numquam ipsum
+                reiciendis minus.
+                <br>
+                <div class="popover">
+                    <button onclick="visible('associe-se')" class="b-asso">ASSOCIE-SE</button>
+                    <div class="associe-se">
+                        Já possui cadastro? Informe seu email e entraremos em contato.
+                        <form onsubmit="showMessage(event, 'Email enviado com sucesso')">
+                            <input id="email" type="email" placeholder="seu@email.com" required>
+                            <button type="submit">enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div id="snack-success"></div>
+    <div id="snack-danger">Erro genérico acontecendo!</div>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="login-msg" style="color: white;
+                        background-color: green;
+                        padding: 10px;
+                        display: inline-block;
+                        position: fixed;
+                        bottom: 20px;
+                        z-index: 2;
+                        left: 20px;">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+    <footer>
+        <ul class="list">
+            <li>&copy;Morgan Assistant 2021</li>
+            <li>rodapé</li>
+        </ul>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='parallax.min.js') }}"></script>
+
+    <script>
+        function visible(classe) {
+            document.querySelector('.' + classe).style.visibility = 'visible';
+        }
+
+        function invisible(classe) {
+            document.querySelector('.' + classe).addEventListener('click', () => 
+                document.querySelector('.' + classe).style.visibility = 'hidden'
+            );
+        }
+        
+        var ss = document.getElementById('snack-success');
+        var sd = document.getElementById('snack-danger');
+        var email = document.querySelector('input#email');
+
+        function showMessage(event, msg) {
+            event.preventDefault();
+            ss.innerHTML = msg;
+            ss.classList.add('show');
+            setTimeout(function() {ss.classList.remove('show')}, 3000);
+            invisible('associe-se');
+        }
+
+        $('#soft-link').click(function(event) {
+            event.preventDefault();
+            var id = $(this).attr('href'),
+                targetOffset = $(id).offset().top;
+            $('html, body').animate({
+                scrollTop: targetOffset
+            }, 500);
+        });
+
+        $().ready(function() {
+			setTimeout(function() {
+				$('.login-msg').hide();
+			}, 3000);
+		});
+    </script>
+
+</body>
+
+</html>

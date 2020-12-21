@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, request, url_for, session, f
 from flask_mysqldb import MySQL
 from models import Usuario
 from daos import UsuarioDao
+from Morgan import main
 
 # CONFIGURAÇÕES #
 
@@ -26,7 +27,7 @@ def naweb():
 
 @app.route('/morgan_assistant')
 def index():
-    return render_template('aboutus.html')
+    return render_template('index.html')
 
 
 @app.route('/morgan_assistant/registrar')
@@ -68,6 +69,12 @@ def autenticar():
 @app.route('/morgan_assistant/mudar_senha')
 def mudar_senha():
     return render_template('alteracaosenha.html')
+
+
+@app.route('/morgan_assistant/rodar')
+def rodar():
+    main()
+    return redirect(url_for('index'))
 
 
 app.run(debug=True)
