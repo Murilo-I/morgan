@@ -40,7 +40,8 @@ def criar():
     email = request.form['email']
     senha = request.form['senha']
     usuario = Usuario(username, email, senha)
-    dao.salvar(usuario)
+    eh_cadastrado = request.form.get('cadastrado')
+    dao.salvar(usuario, eh_cadastrado)
     return redirect(url_for('index'))
 
 

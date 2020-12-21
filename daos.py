@@ -10,10 +10,10 @@ class UsuarioDao:
     def __init__(self, db):
         self.__db = db
 
-    def salvar(self, user):
+    def salvar(self, user, eh_cadastrado):
         cursor = self.__db.connection.cursor()
 
-        if user.id:
+        if eh_cadastrado:
             cursor.execute(SQL_ATUALIZA_SENHA, (user.senha, user.id))
             flash('Senha alterada com sucesso!')
         else:
@@ -24,7 +24,7 @@ class UsuarioDao:
 
     def buscar_por_id(self, user_id):
         cursor = self.__db.connection.cursor()
-        cursor.execute(SQL_USUARIO_POR_ID, user_id)
+        cursor.execute(SQL_USUARIO_POR_ID, [user_id])
         dados = cursor.fetchone()
         usuario = traduz_usuario(dados) if dados else None
         return usuario
