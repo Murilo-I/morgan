@@ -140,10 +140,21 @@ def ultimas_noticias():
     cria_audio(mensagem)
 
 
+def cidade_atual():
+    requisicao = get('https://tools.keycdn.com/geo.json')
+    dados_localizacao = requisicao.json()
+    cidade = dados_localizacao['data']['geo']['city']
+
+    return cidade
+
+
 def previsao_tempo(tempo=False, minmax=False):
+    localizacao_atual = cidade_atual()
+    localizacao_atual = localizacao_atual.replace(" ", "%20").lower()
+
     site = get(
-        'http://api.openweathermap.org/data/2.5/weather?q=barueri&appid=f3df126f823c2d5eadd1de251880b7b1&units=metric'
-        '&lang=pt')
+        f'http://api.openweathermap.org/data/2.5/weather?q={localizacao_atual}&appid=f3df126f823c2d5eadd1de251880b7b1&'
+        'units=metric&lang=pt')
 
     clima = site.json()
     temp = clima['main']['temp']
@@ -153,7 +164,7 @@ def previsao_tempo(tempo=False, minmax=False):
     mensagem = ''
 
     if tempo:
-        mensagem = f'Agora fazem {temp} graus com {desc}'
+        mensagem = f'Agora fazem {temp} graus em {localizacao_atual}. Clima: {desc}'
     elif minmax:
         mensagem = f'Hoje a mínima será de {min_temp} e a máxima de {max_temp}'
 

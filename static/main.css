@@ -295,6 +295,7 @@ img {
     height: 115px;
     width: 115px;
     opacity: 100%;
+    cursor: pointer;
 }
 
 .micro {
@@ -302,5 +303,4 @@ img {
     justify-content: center;
     display: flex;
     margin: 20px 0;
-    cursor: pointer;
 }
