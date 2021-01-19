@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+{% from "_formhelpers.html" import render_field %}
+
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
@@ -19,11 +22,21 @@
         </div>
         <br>
         <p class="description-primary">Coloque seus dados pessoais</p>
+
+        {{ render_field(form.username, 'Username', required, autofocus=true) }}
+        {{ render_field(form.email, 'Email', type='email', required) }}
+        {{ render_field(form.senha, 'Senha', required) }}
+        {{ render_field(form.confirma, 'Confirmar Senha', required) }}
+
+        <!--
         <input required type="text" name="username" placeholder="Username">
         <input required type="email" name="email" placeholder="Email">
         <input required type="password" name="senha" placeholder="Senha">
         <input required type="password" name="confirma" placeholder="Confirmar senha">
+        -->
+
         <input type="submit" value="Criar conta">
     </form>
+
 </body>
 </html>

@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, request, url_for, session, flash
 from flask_mysqldb import MySQL
+from wtforms import Form, StringField, PasswordField, validators, ValidationError
 from models import Usuario
 from daos import UsuarioDao
 from Morgan import main
@@ -16,6 +17,32 @@ app.config['MYSQL_PORT'] = 3306
 
 db = MySQL(app)
 dao = UsuarioDao(db)
+
+
+# CLASSE AUXILIAR #
+
+class ValidaFormulario(Form):
+    username = StringField('username', [
+        validators.Length(min=4, max=25,
+                          message='Username deve ter entre 4 e 25 caracteress')
+    ])
+    email = StringField('email')
+    senha = PasswordField('senha', [
+        validators.Length(min=8, max=32,
+                          message='Senha deve ter entre 8 e 32 caracteres'),
+        validators.EqualTo('confirma', message='Senha confirmada incorretamente')
+    ])
+    confirma = PasswordField('confirma')
+
+    @staticmethod
+    def validate_username(username):
+        if dao.buscar_por_id(username.data):
+            raise ValidationError('Esse username já existe')
+
+    @staticmethod
+    def validate_email(email):
+        if dao.busca_por_email(email.data):
+            raise ValidationError('Esse email já foi cadastrado')
 
 
 # INTEGRAÇÃO WEB #
@@ -37,13 +64,14 @@ def registrar():
 
 @app.route('/morgan_assistant/criar', methods=['POST'])
 def criar():
-    username = request.form['username']
-    email = request.form['email']
-    senha = request.form['senha']
-    usuario = Usuario(username, email, senha)
-    eh_cadastrado = request.form.get('cadastrado')
-    dao.salvar(usuario, eh_cadastrado)
-    return redirect(url_for('index'))
+    form = ValidaFormulario(request.form)
+
+    if form.validate():
+        usuario = Usuario(form.username.data, form.email.data, form.senha.data)
+        eh_cadastrado = request.form.get('cadastrado')
+        dao.salvar(usuario, eh_cadastrado)
+        flash(usuario.id + ' cadastrado com sucesso')
+        return redirect(url_for('index'))
 
 
 @app.route('/morgan_assistant/login')

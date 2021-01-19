@@ -31,6 +31,7 @@ footer {
     display: flex;
     justify-content: space-evenly;
     margin: 0 20px;
+    flex-wrap: wrap;
 }
 
 .card {
@@ -38,6 +39,7 @@ footer {
     padding: 20px;
     margin: 20px;
     border-radius: 10px;
+    max-width: 28vw;
 }
 
 .popover {
@@ -303,4 +305,16 @@ img {
     justify-content: center;
     display: flex;
     margin: 20px 0;
+    cursor: default;
+}
+
+.text-box {
+    width: 50%;
+    height: 50vh;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    border-style: none;
+    border-radius: .5rem;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+    margin: auto;
 }

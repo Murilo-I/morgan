@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>_formhelpers</title>
+</head>
+<body>
+
+    {% macro render_field(fieldName, placeholder) %}
+        <div>
+            {{ fieldName(class_='inputField', placeholder=placeholder, **kwargs) }}
+            {% if field.errors %}
+                <ul class=errors>
+                    {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    {% endmacro %}
+
+</body>
+</html>

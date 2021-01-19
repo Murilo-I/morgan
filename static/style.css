@@ -60,7 +60,7 @@ body{
    color: #ffff; 
 }
 
-.box input[type = "text"],.box input[type = "Email"],.box input[type = "password"]{
+.box .inputField {
     border: 0;
     background: none;
     display: block;
@@ -74,7 +74,7 @@ body{
     border-radius: 15px;
     transition: 0.95s;
 }
-.box input[type = "text"]:focus,.box input[type = "Email"]:focus,.box input[type = "password"]:focus{
+.box .inputField:focus {
   width: 280px;
   border-color: #2ecc71;  
 }
@@ -105,4 +105,11 @@ body{
 
 .box a:hover {
     color: #2ecc71;
+}
+
+.errors {
+    list-style: none;
+    padding: 8px;
+    background-color: red;
+    display: inline-block;
 }
