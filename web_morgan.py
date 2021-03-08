@@ -19,30 +19,32 @@ db = MySQL(app)
 dao = UsuarioDao(db)
 
 
-# CLASSE AUXILIAR #
+# REGRAS DE VALIDAÇÃO #
+
+def validate_username(form, username):
+    if dao.buscar_por_id(username.data):
+        raise ValidationError('Esse username já existe')
+
+
+def validate_email(form, email):
+    if dao.busca_por_email(email.data):
+        raise ValidationError('Esse email já foi cadastrado')
+
 
 class ValidaFormulario(Form):
     username = StringField('username', [
         validators.Length(min=4, max=25,
-                          message='Username deve ter entre 4 e 25 caracteress')
+                          message='Username deve ter entre 4 e 25 caracteress'),
+        validators.DataRequired(), validate_username
     ])
-    email = StringField('email')
+    email = StringField('email', [validators.DataRequired(), validate_email])
     senha = PasswordField('senha', [
         validators.Length(min=8, max=32,
                           message='Senha deve ter entre 8 e 32 caracteres'),
-        validators.EqualTo('confirma', message='Senha confirmada incorretamente')
+        validators.EqualTo('confirma', message='Senha confirmada incorretamente'),
+        validators.DataRequired()
     ])
-    confirma = PasswordField('confirma')
-
-    @staticmethod
-    def validate_username(username):
-        if dao.buscar_por_id(username.data):
-            raise ValidationError('Esse username já existe')
-
-    @staticmethod
-    def validate_email(email):
-        if dao.busca_por_email(email.data):
-            raise ValidationError('Esse email já foi cadastrado')
+    confirma = PasswordField('confirma', [validators.DataRequired()])
 
 
 # INTEGRAÇÃO WEB #
@@ -59,7 +61,8 @@ def index():
 
 @app.route('/morgan_assistant/registrar')
 def registrar():
-    return render_template('cadastro.html')
+    form = ValidaFormulario(request.form)
+    return render_template('cadastro.html', form=form)
 
 
 @app.route('/morgan_assistant/criar', methods=['POST'])

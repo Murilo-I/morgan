@@ -20,8 +20,8 @@
         <br>
         <p class="description-primary">Ou conecte-se com o seu cadastro</p>
         <input type="hidden" name="logado" value="{{ logado or url_for('index') }}">
-        <input required type="text" name="username" placeholder="Username" autofocus="true">
-        <input required type="password" name="senha" placeholder="Senha">
+        <input class="inputField" required type="text" name="username" placeholder="Username" autofocus="true">
+        <input class="inputField" required type="password" name="senha" placeholder="Senha">
         <a href="{{ url_for('mudar_senha') }}">Esqueceu a senha?</a>
         <input type="submit" value="Login">
         <p>Não tem conta? <a href="{{ url_for('registrar') }}">Cadastre-se</a></p>

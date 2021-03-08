@@ -6,9 +6,9 @@
 </head>
 <body>
 
-    {% macro render_field(fieldName, placeholder) %}
+    {% macro render_field(field, placeholderValue) %}
         <div>
-            {{ fieldName(class_='inputField', placeholder=placeholder, **kwargs) }}
+            {{ field(class_='inputField', placeholder=placeholderValue, **kwargs) }}
             {% if field.errors %}
                 <ul class=errors>
                     {% for error in field.errors %}

@@ -113,3 +113,26 @@ body{
     background-color: red;
     display: inline-block;
 }
+
+@media(max-width: 1024px) {
+    .box {
+        width: 50vw;
+        height: auto;
+    }
+
+    .box h1{
+        font-size: 55px;
+    }
+
+    .box p, a {
+        font-size: 28px;
+    }
+
+    .list-social-media i {
+        padding: 10px;
+    }
+    
+    .inputField, .box input[type = "submit"] {
+        font-size: 26px;
+    }
+}

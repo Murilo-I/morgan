@@ -23,16 +23,16 @@
         <br>
         <p class="description-primary">Coloque seus dados pessoais</p>
 
-        {{ render_field(form.username, 'Username', required, autofocus=true) }}
-        {{ render_field(form.email, 'Email', type='email', required) }}
-        {{ render_field(form.senha, 'Senha', required) }}
-        {{ render_field(form.confirma, 'Confirmar Senha', required) }}
+        {{ render_field(form.username, 'Username', autofocus=true) }}
+        {{ render_field(form.email, 'Email', type='email') }}
+        {{ render_field(form.senha, 'Senha') }}
+        {{ render_field(form.confirma, 'Confirmar Senha') }}
 
         <!--
-        <input required type="text" name="username" placeholder="Username">
-        <input required type="email" name="email" placeholder="Email">
-        <input required type="password" name="senha" placeholder="Senha">
-        <input required type="password" name="confirma" placeholder="Confirmar senha">
+        <input class="inputField" required type="text" name="username" placeholder="Username">
+        <input class="inputField" required type="email" name="email" placeholder="Email">
+        <input class="inputField" required type="password" name="senha" placeholder="Senha">
+        <input class="inputField" required type="password" name="confirma" placeholder="Confirmar senha">
         -->
 
         <input type="submit" value="Criar conta">

@@ -48,7 +48,9 @@ footer {
     cursor: pointer;
 }
 
-.noshist, .serviços, .associe-se {
+.noshist,
+.serviços,
+.associe-se {
     position: absolute;
     visibility: hidden;
     font-size: 18px;
@@ -65,7 +67,9 @@ footer {
     margin-bottom: 5px;
 }
 
-.noshist::after, .serviços::after, .associe-se::after {
+.noshist::after,
+.serviços::after,
+.associe-se::after {
     content: " ";
     position: absolute;
     top: 100%;
@@ -80,7 +84,8 @@ footer {
     cursor: default;
 }
 
-#snack-success, #snack-danger {
+#snack-success,
+#snack-danger {
     color: white;
     padding: 10px;
     display: inline-block;
@@ -91,12 +96,14 @@ footer {
     transition: all .3s;
 }
 
-#snack-success.show, #snack-danger.show {
+#snack-success.show,
+#snack-danger.show {
     transform: translateY(0);
 }
 
 #snack-success {
-    background-color: green;
+    background-color: #2ecc71;
+    border-radius: 6px;
 }
 
 #snack-danger {
@@ -219,11 +226,12 @@ img {
 
 /*Menu lateral*/
 
-#btn-menu {
+#btn-menu, .btn-menu {
     display: none;
 }
 
 .container-menu {
+    display: none;
     position: absolute;
     background: rgba(0, 0, 0, 0.5);
     width: 100%;
@@ -246,7 +254,7 @@ img {
     max-width: 250px;
     background: #1c1c1c;
     height: 100vh;
-    position: relative;
+    position: fixed;
     transition: all 500ms ease;
     transform: translateX(-100%);
 }
@@ -290,14 +298,23 @@ img {
 }
 
 .icon {
-    background-color: #3498DB;
-    border-radius: 55px;
+    background-image: linear-gradient( 180deg, rgba(155, 157, 157, 0.96) 7.5%, rgba(90, 85, 85, 0.96) 83.1%);
+    border-radius: 56px;
     padding: 15px;
     color: white;
     height: 115px;
     width: 115px;
     opacity: 100%;
     cursor: pointer;
+    transition: 0.6s;
+}
+
+.icon:hover {
+    height: 122px;
+    width: 122px;
+    transition: 0.6s;
+    border-radius: 66px;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%, rgba(16, 42, 67, 1) 10.3%, rgba(56, 190, 201, 1) 90%);
 }
 
 .micro {
@@ -309,12 +326,41 @@ img {
 }
 
 .text-box {
-    width: 50%;
-    height: 50vh;
+    width: 45%;
+    height: 28vh;
     overflow-y: auto;
     margin-bottom: 20px;
     border-style: none;
     border-radius: .5rem;
     box-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
     margin: auto;
+    text-align: center;
+    position: static;
+}
+
+@media (max-width: 600px) {
+    .logo {
+        margin-top: 23%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 999px) {
+    .card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .menu {
+        display: none;
+    }
+
+    .btn-menu, .container-menu {
+        display: inline;
+    }
+
+    .text-box {
+        width: 80%;
+    }
 }

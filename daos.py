@@ -1,4 +1,4 @@
-from models import usuario
+from models import Usuario
 from flask import flash
 
 SQL_USUARIO_POR_ID = 'SELECT username, email, senha from usuario where username = %s'
@@ -39,4 +39,4 @@ class UsuarioDao:
 
 
 def traduz_usuario(tupla):
-    return usuario(tupla[0], tupla[1], tupla[2])
+    return Usuario(tupla[0], tupla[1], tupla[2])

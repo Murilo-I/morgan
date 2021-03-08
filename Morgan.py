@@ -1,5 +1,6 @@
 import speech_recognition as sr
 from gtts import gTTS
+import os
 from playsound import playsound
 from requests import get
 from bs4 import BeautifulSoup
@@ -63,6 +64,7 @@ def cria_audio(mensagem):
     tss.save('audios/mensagem.mp3')
     print('Morgan: ' + mensagem)
     playsound('audios/mensagem.mp3')
+    os.remove('audios/mensagem.mp3')
 
 
 def executa_comandos(trigger):
@@ -118,7 +120,7 @@ def executa_comandos(trigger):
         responde('Resposta1')
         funcoes_matematicas(trigger)
 
-    if trigger not in triggers:
+    else:
         mensagem = trigger.strip(hotword)
         cria_audio(mensagem)
         print('Comando inválido: ', mensagem)
@@ -141,9 +143,9 @@ def ultimas_noticias():
 
 
 def cidade_atual():
-    requisicao = get('https://tools.keycdn.com/geo.json')
+    requisicao = get('http://api.ipstack.com/201.92.202.80?access_key=2e9b3b8a0a63c50affc3e72ebfde6aef&format=1')
     dados_localizacao = requisicao.json()
-    cidade = dados_localizacao['data']['geo']['city']
+    cidade = dados_localizacao['city']
 
     return cidade
 
@@ -288,3 +290,6 @@ def main():
     responde('ola' + str(r))
     while True:
         monitora_audio()
+
+
+main()

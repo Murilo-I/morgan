@@ -12,10 +12,10 @@
         <br>
         <p class="description-primary">Preencha os campos e crie uma nova senha</p>
         <input type="hidden" name="cadastrado" value="jaCadastrado">
-        <input required type="text" name="username" placeholder="Username" autofocus="true">
-        <input required type="email" name="email" placeholder="Email">
-        <input required type="password" name="senha" placeholder="Nova senha">
-        <input required type="password" name="confirma" placeholder="Confirmar senha">
+        <input class="inputField" required type="text" name="username" placeholder="Username" autofocus="true">
+        <input class="inputField" required type="email" name="email" placeholder="Email">
+        <input class="inputField" required type="password" name="senha" placeholder="Nova senha">
+        <input class="inputField" required type="password" name="confirma" placeholder="Confirmar senha">
         <input type="submit" value="Alterar">
         <p>Quer fazer login? <a href="{{ url_for('login') }}">Entrar</a></p>
 

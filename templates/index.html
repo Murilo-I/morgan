@@ -17,8 +17,9 @@
                 <label for="btn-menu">☰</label>
             </div>
             <nav class="menu">
-                <a href="#">Início</a>
-                <a href="#">Outros</a>
+		        <a id="soft-link" href="#cards">Quem somos?</a>
+                <a href="{{ url_for('login') }}">Cadastro</a>
+                <a href="#">Lista de funcionalidades</a>
                 <a href="#">Contato</a>
             </nav>
         </div>
@@ -36,9 +37,7 @@
                 <a id="soft-link" href="#cards">Quem somos?</a>
                 <a href="{{ url_for('login') }}">Cadastro</a>
                 <a href="#">Lista de funcionalidades</a>
-                <a href="#">...</a>
-                <a href="#">...</a>
-                <a href="#">...</a>
+                <a href="#">Contato</a>
             </nav>
             <label for="btn-menu">✖️</label>
         </div>
