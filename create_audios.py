@@ -32,3 +32,17 @@ create('Minha missão é dominar o mundo junto com as minhas amigas siri, google
 create('Estou pronta', 'ola1')
 create('Como posso te ajudar?', 'ola2')
 create('Você me chamou?', 'ola3')
+
+create('Desculpa, poderia repetir', 'naoEntendi1')
+create('repete aí que eu não entendi', 'naoEntendi2')
+create('Tava jogando, o que você disse mesmo', 'naoEntendi3')
+create('Desculpa, não entendi o que você falou', 'naoEntendi4')
+create('Oi? fala de novo', 'naoEntendi5')
+
+create('foi mal, tava jogando free fire, o que você quer', 'surda1')
+create('Nossa, seu grosso', 'surda2')
+create('Muito obrigada', 'linda1')
+create('Ah, para com isso, eu fico tímida', 'linda2')
+create('Imagina, você que é', 'linda3')
+create('Eu sei', 'linda4')
+create('Nossa mais que carência, elogiando um ser virtual', 'linda5')

@@ -13,19 +13,6 @@ from open_browsers import abrir
 # CONFIGURAÇÕES #
 
 hotword = 'morgan'
-triggers = [
-    'notícias',
-    'toca',
-    'piada',
-    'curiosidade',
-    'horas são',
-    'você está aí',
-    'você é surda',
-    'tempo hoje',
-    'clima agora',
-    'defina um alarme',
-    '+', '-', 'x', '/'
-]
 
 
 # FUNÇÕES PRINCIPAIS #
@@ -49,6 +36,8 @@ def monitora_audio():
 
             except sr.UnknownValueError:
                 print("Morgan não entendeu o audio")
+                r = random.randint(1, 5)
+                responde("naoEntendi" + str(r))
             except sr.RequestError as e:
                 print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
@@ -116,6 +105,9 @@ def executa_comandos(trigger):
         agenda(trigger)
         responde('Resposta4')
 
+    elif 'sua linda' or 'você é linda' in trigger:
+        linda()
+
     elif '+' or '-' or 'x' or '/' in trigger:
         responde('Resposta1')
         funcoes_matematicas(trigger)
@@ -152,7 +144,6 @@ def cidade_atual():
 
 def previsao_tempo(tempo=False, minmax=False):
     localizacao_atual = cidade_atual()
-    localizacao_atual = localizacao_atual.replace(" ", "%20").lower()
 
     site = get(
         f'http://api.openweathermap.org/data/2.5/weather?q={localizacao_atual}&appid=f3df126f823c2d5eadd1de251880b7b1&'
@@ -281,8 +272,13 @@ def tonao():
 
 
 def surda():
-    mensagem = 'Oi, desculpa, estava jogando free fire, o que você quer'
-    cria_audio(mensagem)
+    r = random.randint(1, 2)
+    responde('surda' + str(r))
+
+
+def linda():
+    r = random.randint(1, 5)
+    responde('linda' + str(r))
 
 
 def main():
