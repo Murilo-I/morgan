@@ -21,7 +21,6 @@ class UsuarioDao:
             cursor.execute(SQL_CRIA_USUARIO, (user.id, user.email, user.senha))
             flash(user.id + ' cadastrado com sucesso!')
         self.__db.connection.commit()
-        return user
 
     def buscar_por_id(self, user_id):
         cursor = self.__db.connection.cursor()

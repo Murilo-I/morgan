@@ -7,11 +7,11 @@
     <link rel="icon" href="{{ url_for('static', filename='morgan_icon.png') }}">
 </head>
 <body>
-    <form class="box" action="{{ url_for('criar') }}" method="post">
+    <form class="box" action="{{ url_for('atualizar') }}" method="post">
         <h1>Alterar a senha</h1>
         <br>
         <p class="description-primary">Preencha os campos e crie uma nova senha</p>
-        <input type="hidden" name="cadastrado" value="jaCadastrado">
+        <input type="hidden" name="cadastrado" value="cadastrado">
         <input class="inputField" required type="text" name="username" placeholder="Username" autofocus="true">
         <input class="inputField" required type="email" name="email" placeholder="Email">
         <input class="inputField" required type="password" name="senha" placeholder="Nova senha">

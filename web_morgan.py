@@ -3,7 +3,6 @@ from flask_mysqldb import MySQL
 from wtforms import Form, StringField, PasswordField, validators, ValidationError
 from models import Usuario
 from daos import UsuarioDao
-from Morgan import main
 
 # CONFIGURAÇÕES #
 
@@ -49,6 +48,7 @@ class ValidaFormulario(Form):
 
 # INTEGRAÇÃO WEB #
 
+
 @app.route('/')
 def naweb():
     return redirect(url_for('index'))
@@ -71,10 +71,16 @@ def criar():
 
     if form.validate():
         usuario = Usuario(form.username.data, form.email.data, form.senha.data)
-        eh_cadastrado = request.form.get('cadastrado')
-        dao.salvar(usuario, eh_cadastrado)
-        flash(usuario.id + ' cadastrado com sucesso')
+        dao.salvar(usuario, None)
         return redirect(url_for('index'))
+
+
+@app.route('/morgan_assistant/atualizar', methods=['POST'])
+def atualizar():
+    usuario = Usuario(request.form['username'], request.form['email'], request.form['senha'])
+    eh_cadastrado = request.form.get('cadastrado')
+    dao.salvar(usuario, eh_cadastrado)
+    return redirect(url_for('index'))
 
 
 @app.route('/morgan_assistant/login')
@@ -104,7 +110,6 @@ def mudar_senha():
 
 @app.route('/morgan_assistant/rodar')
 def rodar():
-    main()
     return redirect(url_for('index'))
 
 
