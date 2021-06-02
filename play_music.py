@@ -104,6 +104,33 @@ def whato_play(trigger):
     elif 'coldplay' in trigger:
         playlists('Coldplay')
 
+    elif 'bon jovi' in trigger:
+        playlists('Bon jovi')
+
+    elif 'tik tok' in trigger:
+        playlists('Tik tok')
+
+    elif 'lil tjay' in trigger:
+        playlists('Lil Tjay')
+
+    elif 'zé vaqueiro' in trigger:
+        playlists('Zé vaqueiro')
+
+    elif 'teto' in trigger:
+        playlists('Teto')
+
+    elif 'cauê' in trigger:
+        playlists('Cauê')
+
+    elif 'mc marques' in trigger:
+        playlists('Mc marques')
+
+    elif 'matuê' in trigger:
+        playlists('Matuê')
+
+
+    elif 'o pai tá on' in trigger:
+        playlists('o pai tá on')
 
 def playlists(album):
     if album == 'pop smoke':
@@ -207,3 +234,27 @@ def playlists(album):
 
     elif album == 'Coldplay':
         browser.open('https://www.youtube.com/watch?v=RB-RcX5DS5A&list=PLzyYbaYKbahnNE3DYx4f9XfA_QhhDlJh5&index=1')
+
+    elif album == 'Tik tok':
+        browser.open('https://www.youtube.com/watch?v=d_HlPboLRL8&list=PLSR9lWowvoE3A9i4JVVHtQFjlJt0_LItG')
+
+    elif album == 'Lil Tjay':
+        browser.open('https://www.youtube.com/watch?v=R9RtTGzs5EE')
+
+    elif album == 'Zé vaqueiro':
+        browser.open('https://www.youtube.com/watch?v=4PssBppUr6w&list=PLG894NogZ8ffho9OHJW2Qk481ve_O915c&index=1')
+
+    elif album == 'Teto':
+        browser.open('https://www.youtube.com/watch?v=c24PWCbuX6M&list=PL1Bd3v7bpGCW-ZUVhSDvdeTTXlhmj_Lyb&index=1')
+
+    elif album == 'Cauê':
+        browser.open('https://www.youtube.com/watch?v=AgUfstY7ssA&list=PLI4uR-MWTRAzFoOBEC-UD6eYe-zIckNz3&index=1')
+
+    elif album == 'Mc marques':
+        browser.open('https://www.youtube.com/watch?v=BM_3d5DE9Ks&list=PLZx41cbRj_f3Ligmqw7Z8WDaE0ePJ2qZO&index=1')
+
+    elif album == 'Matuê':
+        browser.open('https://www.youtube.com/watch?v=m226f2reF28&list=PLNczdTkNAA77I_jvtC8qj3toi4DOccsG8&index=5')
+
+    elif album == 'o pai tá on':
+        browser.open('https://www.youtube.com/watch?v=Vh1AUd-uj7k')
