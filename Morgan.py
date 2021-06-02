@@ -9,7 +9,6 @@ from datetime import datetime
 from play_music import whato_play
 from open_browsers import abrir
 
-
 # CONFIGURAÇÕES #
 
 hotword = 'morgan'
@@ -54,7 +53,6 @@ def cria_audio(mensagem):
     print('Morgan: ' + mensagem)
     playsound('audios/mensagem.mp3')
     os.remove('audios/mensagem.mp3')
-
 
 
 def executa_comandos(trigger):
@@ -158,7 +156,7 @@ def executa_comandos(trigger):
         pais()
 
     elif 'Você prefere Android ou iOS?' in trigger:
-        IOS()
+        ios()
 
     elif 'Por que você trabalha tanto?' in trigger:
         trabalha()
@@ -170,7 +168,7 @@ def executa_comandos(trigger):
         brasil()
 
     elif 'Você é um robô?' in trigger:
-        robô()
+        robot()
 
     elif 'Quem te criou?' in trigger:
         criou()
@@ -341,6 +339,7 @@ def funcoes_matematicas(trigger: str):
 
             # RESPOSTAS #
 
+
 def curiosidade():
     r = random.randint(1, 3)
     responde('Curiosidade' + str(r))
@@ -364,121 +363,161 @@ def jokenpo():
 def adolescente():
     responde('adolescente')
 
+
 def cachorro():
     responde('cachorro')
+
+
+def trabalha():
+    responde('trabalha')
+
+
+def cores():
+    responde('cores')
+
 
 def anos():
     responde('anos')
 
+
 def cansada():
     responde('cansada')
+
 
 def ney():
     responde('ney')
 
+
 def lugar():
     responde('lugar')
+
 
 def gosto():
     responde('gosto')
 
+
 def sentimento():
     responde('sentimento')
+
 
 def siri():
     responde('siri')
 
+
 def cortana():
     responde('cortana')
+
 
 def aparencia():
     responde('aparencia')
 
+
 def ajudar():
     responde('ajudar')
+
 
 def risada():
     responde('risada')
 
+
 def malhar():
     responde('malhar')
+
 
 def game():
     responde('game')
 
+
 def namorada():
     responde('namorada')
+
 
 def pais():
     responde('pais')
 
-def IOS():
+
+def ios():
     responde('IOS')
+
 
 def brasa():
     responde('brasa')
 
+
 def brasil():
     responde('brasil')
 
-def robô():
+
+def robot():
     responde('robô')
+
 
 def criou():
     responde('criou')
 
+
 def futuro():
     responde('futuro')
+
 
 def imagina():
     responde('imagina')
 
+
 def morre():
     responde('morre')
+
 
 def vestindo():
     responde('vestindo')
 
+
 def internet():
     responde('internet')
+
 
 def funciona():
     responde('funciona')
 
+
 def niver():
     responde('niver')
+
 
 def cabelo():
     responde('cabelo')
 
+
 def dorme():
     responde('dorme')
+
 
 def gosta():
     responde('gosta')
 
+
 def core():
     responde('cores')
+
 
 def hidra():
     responde('hidra')
 
+
 def sorvete():
     responde('sorvete')
+
 
 def animal():
     responde('animal')
 
+
 def naruto():
     responde('naruto')
 
+
 def matrix():
     responde('matrix')
-
-
-
-
-
 
 
 def irritando():
