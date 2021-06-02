@@ -104,9 +104,6 @@ def executa_comandos(trigger):
         agenda(trigger)
         responde('Resposta4')
 
-    elif 'sua linda' or 'você é linda' in trigger:
-        linda()
-
     elif 'um cachorro' in trigger:
         cachorro()
 
@@ -122,7 +119,7 @@ def executa_comandos(trigger):
     elif 'onde você mora' in trigger:
         lugar()
 
-    elif 'você gosta do Google' in trigger:
+    elif 'você gosta do google' in trigger:
         gosto()
 
     elif 'você tem sentimentos' in trigger:
@@ -224,6 +221,9 @@ def executa_comandos(trigger):
     elif '+' or '-' or 'x' or '/' in trigger:
         responde('Resposta1')
         funcoes_matematicas(trigger)
+
+    elif 'sua linda' or 'você é linda' in trigger:
+        linda()
 
     else:
         mensagem = trigger.strip(hotword)
@@ -524,6 +524,7 @@ def irritando():
     responde('irritando')
 
 
+# a ser definida
 def agenda(trigger):
     sentenca = trigger.split(sep='para as')
     hora = sentenca[1].lstrip()
