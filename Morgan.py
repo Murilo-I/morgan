@@ -110,115 +110,115 @@ def executa_comandos(trigger):
     elif 'um cachorro' in trigger:
         cachorro()
 
-    elif 'Quantos anos você tem?' in trigger:
+    elif 'quantos anos você tem' in trigger:
         anos()
 
-    elif 'Você fica cansada ?' in trigger:
+    elif 'você fica cansada' in trigger:
         cansada()
 
-    elif 'Quem foi seu primeiro crush?' in trigger:
+    elif 'quem foi seu primeiro crush' in trigger:
         ney()
 
-    elif 'Onde você mora?' in trigger:
+    elif 'onde você mora' in trigger:
         lugar()
 
-    elif 'Você gosta do Google?' in trigger:
+    elif 'você gosta do Google' in trigger:
         gosto()
 
-    elif 'Você tem sentimentos?' in trigger:
+    elif 'você tem sentimentos' in trigger:
         sentimento()
 
-    elif 'Você gosta da Siri?' in trigger:
+    elif 'você gosta da Siri' in trigger:
         siri()
 
-    elif 'Você gosta da Cortana?' in trigger:
+    elif 'você gosta da Cortana' in trigger:
         cortana()
 
-    elif 'Como você se parece?' in trigger:
+    elif 'como você se parece' in trigger:
         aparencia()
 
-    elif 'Por que criaram você?' in trigger:
+    elif 'por que criaram você' in trigger:
         ajudar()
 
-    elif 'Você pode rir?' in trigger:
+    elif 'você pode rir' in trigger:
         risada()
 
-    elif 'Você malha?' in trigger:
+    elif 'você malha' in trigger:
         malhar()
 
-    elif 'Descreva a sua personalidade.' in trigger:
+    elif 'descreva a sua personalidade' in trigger:
         game()
 
-    elif 'Você tem namorado?' in trigger:
+    elif 'você tem namorado' in trigger:
         namorada()
 
-    elif 'Quem é o seu pai?' in trigger:
+    elif 'quem é o seu pai' in trigger:
         pais()
 
-    elif 'Você prefere Android ou iOS?' in trigger:
+    elif 'você prefere android ou ios' in trigger:
         ios()
 
-    elif 'Por que você trabalha tanto?' in trigger:
+    elif 'por que você trabalha tanto' in trigger:
         trabalha()
 
-    elif 'Onde você nasceu?' in trigger:
+    elif 'onde você nasceu' in trigger:
         brasa()
 
-    elif 'Você gosta do Brasil?' in trigger:
+    elif 'você gosta do Brasil' in trigger:
         brasil()
 
-    elif 'Você é um robô?' in trigger:
+    elif 'você é um robô' in trigger:
         robot()
 
-    elif 'Quem te criou?' in trigger:
+    elif 'quem te criou' in trigger:
         criou()
 
-    elif 'Você pode prever o futuro?' in trigger:
+    elif 'você pode prever o futuro' in trigger:
         futuro()
 
-    elif ' Você vai morrer um dia?' in trigger:
+    elif 'você vai morrer um dia' in trigger:
         morre()
 
-    elif 'Você tem imaginação?' in trigger:
+    elif 'você tem imaginação' in trigger:
         imagina()
 
-    elif 'O que você está vestindo?' in trigger:
+    elif 'o que você está vestindo' in trigger:
         vestindo()
 
-    elif 'Você funciona sem Internet?' in trigger:
+    elif 'você funciona sem Internet' in trigger:
         internet()
 
-    elif 'Como você funciona?' in trigger:
+    elif 'como você funciona' in trigger:
         funciona()
 
-    elif 'Quando é seu aniversário?' in trigger:
+    elif 'quando é seu aniversário' in trigger:
         niver()
 
-    elif 'Você tem cabelo?' in trigger:
+    elif 'você tem cabelo' in trigger:
         cabelo()
 
-    elif 'Você dorme?' in trigger:
+    elif 'você dorme' in trigger:
         dorme()
 
-    elif 'Qual sua coisa preferida na Internet?' in trigger:
+    elif 'qual sua coisa preferida na Internet' in trigger:
         gosta()
 
-    elif 'Qual a sua cor preferida?' in trigger:
+    elif 'qual a sua cor preferida' in trigger:
         cores()
 
-    elif 'O que você bebe?' in trigger:
+    elif 'o que você bebe' in trigger:
         hidra()
 
-    elif 'Qual é o seu sabor de sorvete favorito?' in trigger:
+    elif 'qual é o seu sabor de sorvete favorito' in trigger:
         sorvete()
 
-    elif 'Cachorros ou gatos?' in trigger:
+    elif 'cachorros ou gatos' in trigger:
         animal()
 
-    elif 'Você gosta de Naruto ?' in trigger:
+    elif 'você gosta de Naruto' in trigger:
         naruto()
 
-    elif 'Nós estamos na Matrix?' in trigger:
+    elif 'nós estamos na Matrix' in trigger:
         matrix()
 
     elif '+' or '-' or 'x' or '/' in trigger:
