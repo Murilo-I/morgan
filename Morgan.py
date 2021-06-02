@@ -56,6 +56,7 @@ def cria_audio(mensagem):
     os.remove('audios/mensagem.mp3')
 
 
+
 def executa_comandos(trigger):
     if 'notícias' in trigger:
         responde('Resposta1')
@@ -107,6 +108,120 @@ def executa_comandos(trigger):
 
     elif 'sua linda' or 'você é linda' in trigger:
         linda()
+
+    elif 'um cachorro' in trigger:
+        cachorro()
+
+    elif 'Quantos anos você tem?' in trigger:
+        anos()
+
+    elif 'Você fica cansada ?' in trigger:
+        cansada()
+
+    elif 'Quem foi seu primeiro crush?' in trigger:
+        ney()
+
+    elif 'Onde você mora?' in trigger:
+        lugar()
+
+    elif 'Você gosta do Google?' in trigger:
+        gosto()
+
+    elif 'Você tem sentimentos?' in trigger:
+        sentimento()
+
+    elif 'Você gosta da Siri?' in trigger:
+        siri()
+
+    elif 'Você gosta da Cortana?' in trigger:
+        cortana()
+
+    elif 'Como você se parece?' in trigger:
+        aparencia()
+
+    elif 'Por que criaram você?' in trigger:
+        ajudar()
+
+    elif 'Você pode rir?' in trigger:
+        risada()
+
+    elif 'Você malha?' in trigger:
+        malhar()
+
+    elif 'Descreva a sua personalidade.' in trigger:
+        game()
+
+    elif 'Você tem namorado?' in trigger:
+        namorada()
+
+    elif 'Quem é o seu pai?' in trigger:
+        pais()
+
+    elif 'Você prefere Android ou iOS?' in trigger:
+        IOS()
+
+    elif 'Por que você trabalha tanto?' in trigger:
+        trabalha()
+
+    elif 'Onde você nasceu?' in trigger:
+        brasa()
+
+    elif 'Você gosta do Brasil?' in trigger:
+        brasil()
+
+    elif 'Você é um robô?' in trigger:
+        robô()
+
+    elif 'Quem te criou?' in trigger:
+        criou()
+
+    elif 'Você pode prever o futuro?' in trigger:
+        futuro()
+
+    elif ' Você vai morrer um dia?' in trigger:
+        morre()
+
+    elif 'Você tem imaginação?' in trigger:
+        imagina()
+
+    elif 'O que você está vestindo?' in trigger:
+        vestindo()
+
+    elif 'Você funciona sem Internet?' in trigger:
+        internet()
+
+    elif 'Como você funciona?' in trigger:
+        funciona()
+
+    elif 'Quando é seu aniversário?' in trigger:
+        niver()
+
+    elif 'Você tem cabelo?' in trigger:
+        cabelo()
+
+    elif 'Você dorme?' in trigger:
+        dorme()
+
+    elif 'Qual sua coisa preferida na Internet?' in trigger:
+        gosta()
+
+    elif 'Qual a sua cor preferida?' in trigger:
+        cores()
+
+    elif 'O que você bebe?' in trigger:
+        hidra()
+
+    elif 'Qual é o seu sabor de sorvete favorito?' in trigger:
+        sorvete()
+
+    elif 'Cachorros ou gatos?' in trigger:
+        animal()
+
+    elif 'Você gosta de Naruto ?' in trigger:
+        naruto()
+
+    elif 'Nós estamos na Matrix?' in trigger:
+        matrix()
 
     elif '+' or '-' or 'x' or '/' in trigger:
         responde('Resposta1')
@@ -224,6 +339,7 @@ def funcoes_matematicas(trigger: str):
         else:
             cria_audio(error_msg)
 
+            # RESPOSTAS #
 
 def curiosidade():
     r = random.randint(1, 3)
@@ -247,6 +363,122 @@ def jokenpo():
 
 def adolescente():
     responde('adolescente')
+
+def cachorro():
+    responde('cachorro')
+
+def anos():
+    responde('anos')
+
+def cansada():
+    responde('cansada')
+
+def ney():
+    responde('ney')
+
+def lugar():
+    responde('lugar')
+
+def gosto():
+    responde('gosto')
+
+def sentimento():
+    responde('sentimento')
+
+def siri():
+    responde('siri')
+
+def cortana():
+    responde('cortana')
+
+def aparencia():
+    responde('aparencia')
+
+def ajudar():
+    responde('ajudar')
+
+def risada():
+    responde('risada')
+
+def malhar():
+    responde('malhar')
+
+def game():
+    responde('game')
+
+def namorada():
+    responde('namorada')
+
+def pais():
+    responde('pais')
+
+def IOS():
+    responde('IOS')
+
+def brasa():
+    responde('brasa')
+
+def brasil():
+    responde('brasil')
+
+def robô():
+    responde('robô')
+
+def criou():
+    responde('criou')
+
+def futuro():
+    responde('futuro')
+
+def imagina():
+    responde('imagina')
+
+def morre():
+    responde('morre')
+
+def vestindo():
+    responde('vestindo')
+
+def internet():
+    responde('internet')
+
+def funciona():
+    responde('funciona')
+
+def niver():
+    responde('niver')
+
+def cabelo():
+    responde('cabelo')
+
+def dorme():
+    responde('dorme')
+
+def gosta():
+    responde('gosta')
+
+def core():
+    responde('cores')
+
+def hidra():
+    responde('hidra')
+
+def sorvete():
+    responde('sorvete')
+
+def animal():
+    responde('animal')
+
+def naruto():
+    responde('naruto')
+
+def matrix():
+    responde('matrix')
+
+
+
+
+
 
 
 def irritando():

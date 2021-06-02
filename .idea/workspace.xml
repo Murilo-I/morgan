@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b881d404-8506-487c-9857-d273b9b2518b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/morgan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/morgan.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Morgan.py" beforeDir="false" afterPath="$PROJECT_DIR$/Morgan.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_audios.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_audios.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/play_music.py" beforeDir="false" afterPath="$PROJECT_DIR$/play_music.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +24,7 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1s2ce2HpUC9OCEEdES8Zwsnu3pA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -33,7 +35,49 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.web_morgan">
+  <component name="RunManager" selected="Python.Morgan">
+    <configuration name="Morgan (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="morgan" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Morgan.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Morgan (3)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="morgan" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Morgan.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Morgan" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="morgan" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -55,7 +99,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="create_audios" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="play_music (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="morgan" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -67,7 +111,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/create_audios.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/play_music.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -76,7 +120,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="prepara_banco" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="play_music" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="morgan" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -88,28 +132,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/prepara_banco.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="web_morgan" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="morgan" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/web_morgan.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/play_music.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -120,10 +143,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.web_morgan" />
         <item itemvalue="Python.Morgan" />
-        <item itemvalue="Python.create_audios" />
-        <item itemvalue="Python.prepara_banco" />
+        <item itemvalue="Python.play_music (1)" />
+        <item itemvalue="Python.Morgan (3)" />
+        <item itemvalue="Python.play_music" />
+        <item itemvalue="Python.Morgan (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -139,25 +163,49 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1620232494441">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1622554045321">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1620232494441" />
-    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1620232494440">
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1622554045321" />
+    <state width="1367" height="182" key="GridCell.Tab.0.bottom" timestamp="1622594195581">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1620232494440" />
-    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1620232494440">
+    <state width="1367" height="182" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1622594195581" />
+    <state width="1367" height="182" key="GridCell.Tab.0.center" timestamp="1622594195581">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1620232494440" />
-    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1620232494441">
+    <state width="1367" height="182" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1622594195580" />
+    <state width="1367" height="182" key="GridCell.Tab.0.left" timestamp="1622594195580">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1620232494441" />
-    <state x="184" y="9" key="SettingsEditor" timestamp="1620231800819">
+    <state width="1367" height="182" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1622594195580" />
+    <state width="1367" height="182" key="GridCell.Tab.0.right" timestamp="1622594195581">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1620231800819" />
+    <state width="1367" height="182" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1622594195581" />
+    <state width="1367" height="232" key="GridCell.Tab.1.bottom" timestamp="1620239697694">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1367" height="232" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1620239697694" />
+    <state width="1367" height="232" key="GridCell.Tab.1.center" timestamp="1620239697694">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1367" height="232" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1620239697694" />
+    <state width="1367" height="232" key="GridCell.Tab.1.left" timestamp="1620239697694">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1367" height="232" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1620239697694" />
+    <state width="1367" height="232" key="GridCell.Tab.1.right" timestamp="1620239697694">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1367" height="232" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1620239697694" />
+    <state x="230" y="18" key="SettingsEditor" timestamp="1620240108107">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="230" y="18" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1620240108107" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1622594030455">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1622594030455" />
   </component>
 </project>
