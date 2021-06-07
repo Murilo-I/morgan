@@ -248,9 +248,10 @@ def ultimas_noticias():
 
 
 def cidade_atual():
-    requisicao = get('http://api.ipstack.com/201.92.202.80?access_key=2e9b3b8a0a63c50affc3e72ebfde6aef&format=1')
+    requisicao = get('https://api.bigdatacloud.net/data/ip-geolocation?ip=201.92.202.80&localityLanguage=en&key'
+                     '=fa82548f589f4ca78ce6d34dc8cfb42d')
     dados_localizacao = requisicao.json()
-    cidade = dados_localizacao['city']
+    cidade = dados_localizacao['location']['city']
 
     return cidade
 
