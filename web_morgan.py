@@ -108,6 +108,11 @@ def mudar_senha():
     return render_template('alteracaosenha.html')
 
 
+@app.route('/morgan_assistant/funcionalidades')
+def funcionalidades():
+    return render_template('funcionalidades.html')
+
+
 @app.route('/morgan_assistant/rodar')
 def rodar():
     return redirect(url_for('index'))

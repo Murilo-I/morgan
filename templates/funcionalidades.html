@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='morgan_icon.png') }}">
+    <link rel="stylesheet" href="list_style.css">
+    <title>Funcionalidades</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="btn-menu">
+                <label for="btn-menu">☰</label>
+            </div>
+            <nav class="menu">
+                <a href="{{ url_for('index') }}">Início</a>
+                <a href="{{ url_for('login') }}">Cadastro</a>
+                <a href="#">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <input type="checkbox" id="btn-menu">
+    <div class="container-menu">
+        <div class="cont-menu">
+            <nav>
+                <a href="{{ url_for('index') }}">Início</a>
+                <a href="{{ url_for('login') }}">Cadastro</a>
+                <a href="#">Contato</a>
+            </nav>
+            <label for="btn-menu">✖️</label>
+        </div>
+    </div>
+
+    <div class="list-func">
+        <h1 style="text-align: center">O que a Morgan pode fazer?</h1><br>
+        <p class="rgb">
+            Operações matemáticas simples
+        </p>
+        <p class="rgb">
+            Contar piadas
+        </p>
+        <p class="rgb">
+            Citar curiosidades
+        </p>
+        <p class="rgb">
+            Tocar playlists
+        </p>
+        <p class="rgb">
+            Trazer a temperatura do local
+        </p>
+        <p class="rgb">
+            Buscar notícias
+        </p>
+        <p class="rgb">
+            Abrir sites
+        </p>
+        <p class="rgb">
+            +30 funções de interatividade
+        </p>
+    </div>
+
+</body>
+
+</html>
