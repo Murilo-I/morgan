@@ -128,9 +128,9 @@ def whato_play(trigger):
     elif 'matuê' in trigger:
         playlists('Matuê')
 
-
     elif 'o pai tá on' in trigger:
         playlists('o pai tá on')
+
 
 def playlists(album):
     if album == 'pop smoke':
