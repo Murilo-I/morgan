@@ -46,26 +46,20 @@ def monitora_audio():
 
 
 def responde(arquivo):
-    # micro = sr.Recognizer
-    # with sr.AudioFile('audios/' + arquivo + '.mp3') as source:
-    #     audio = micro.listen(source)
-    #     try:
-    #         text = micro.recognize_google(audio, language="pt-BR")
-    #         global morgan_msg
-    #         morgan_msg = text
-    #     except sr.UnknownValueError:
-    #         print("Erro transcrevendo o audio")
     playsound('audios/' + arquivo + '.mp3')
 
 
 def cria_audio(mensagem):
-    global morgan_msg
-    morgan_msg = mensagem
     tss = gTTS(mensagem, lang='pt-br')
     tss.save('audios/mensagem.mp3')
     print('Morgan: ' + mensagem)
     playsound('audios/mensagem.mp3')
     os.remove('audios/mensagem.mp3')
+
+
+def salva_msg_global(msg):
+    global morgan_msg
+    morgan_msg = msg
 
 
 def executa_comandos(trigger):
@@ -112,11 +106,6 @@ def executa_comandos(trigger):
         responde('Resposta1')
         previsao_tempo(minmax=True)
 
-    elif 'defina um alarme' in trigger:
-        responde('Resposta1')
-        agenda(trigger)
-        responde('Resposta4')
-
     elif 'um cachorro' in trigger:
         cachorro()
 
@@ -132,8 +121,8 @@ def executa_comandos(trigger):
     elif 'onde você mora' in trigger:
         lugar()
 
-    elif 'você gosta do google' in trigger:
-        gosto()
+    elif 'você gosta da google' in trigger:
+        google()
 
     elif 'você tem sentimentos' in trigger:
         sentimento()
@@ -162,7 +151,7 @@ def executa_comandos(trigger):
     elif 'você tem namorado' in trigger:
         namorada()
 
-    elif 'quem é o seu pai' in trigger:
+    elif 'você tem pais' in trigger:
         pais()
 
     elif 'você prefere android ou ios' in trigger:
@@ -211,13 +200,13 @@ def executa_comandos(trigger):
         dorme()
 
     elif 'qual sua coisa preferida na internet' in trigger:
-        gosta()
+        gostanet()
 
     elif 'qual a sua cor preferida' in trigger:
         cores()
 
     elif 'o que você bebe' in trigger:
-        hidra()
+        hidratado()
 
     elif 'qual é o seu sabor de sorvete favorito' in trigger:
         sorvete()
@@ -257,6 +246,7 @@ def ultimas_noticias():
 
     r = random.randint(1, 9)
     mensagem = manchetes[r].title.text
+    salva_msg_global(mensagem)
     cria_audio(mensagem)
 
 
@@ -288,6 +278,7 @@ def previsao_tempo(tempo=False, minmax=False):
     elif minmax:
         mensagem = f'Hoje a mínima será de {min_temp} e a máxima de {max_temp}'
 
+    salva_msg_global(mensagem)
     cria_audio(mensagem)
 
 
@@ -304,6 +295,7 @@ def funcoes_matematicas(trigger: str):
         if num1.isdigit() & num2.isdigit():
             result = float(num1) + float(num2)
             mensagem = f'{num1} mais {num2} é igual a {result}'
+            salva_msg_global(mensagem)
             cria_audio(mensagem)
         else:
             cria_audio(error_msg)
@@ -318,6 +310,7 @@ def funcoes_matematicas(trigger: str):
         if num1.isdigit() & num2.isdigit():
             result = float(num1) - float(num2)
             mensagem = f'{num1} menos {num2} é igual a {result}'
+            salva_msg_global(mensagem)
             cria_audio(mensagem)
         else:
             cria_audio(error_msg)
@@ -333,6 +326,7 @@ def funcoes_matematicas(trigger: str):
             result = float(num1) * float(num2)
             print(result)
             mensagem = f'{num1} vezes {num2} é igual a {result}'
+            salva_msg_global(mensagem)
             cria_audio(mensagem)
         else:
             cria_audio(error_msg)
@@ -347,230 +341,320 @@ def funcoes_matematicas(trigger: str):
         if num1.isdigit() & num2.isdigit():
             result = float(num1) / float(num2)
             mensagem = f'{num1} dividido por {num2} é igual a {result}'
+            salva_msg_global(mensagem)
             cria_audio(mensagem)
         else:
             cria_audio(error_msg)
+
+
+def horacao():
+    horario = datetime.now().strftime('%H:%M')
+    mensagem = 'Agora são ' + horario
+    salva_msg_global(mensagem)
+    cria_audio(mensagem)
+
 
 # RESPOSTAS #
 
 
 def curiosidade():
     r = random.randint(1, 3)
+    msg = ''
+    if r == 1:
+        msg = 'você sabia que júpiter e o maior e mais radioativo planeta do sistema solar'
+    if r == 2:
+        msg = 'o local mais fundo do planeta terra é as fossas das marianas, com cerca de 11km de profundidade'
+    if r == 3:
+        msg = 'o lugar naturalmente mais perigoso da terra é o vale da morte, um deserto com temperatura média de 57°' \
+              ' na Califórnia '
+
+    salva_msg_global(msg)
     responde('Curiosidade' + str(r))
 
 
 def piada():
     r = random.randint(1, 3)
+    msg = ''
+    if r == 1:
+        msg = 'O que o próton disse para o elétron ? Hoje você está muito negativo'
+    if r == 2:
+        msg = 'o que o tomate foi fazer no banco, tirar extrato'
+    if r == 3:
+        msg = 'qual a tecla preferida do astronauta, a barra de espaço'
+
+    salva_msg_global(msg)
     responde('Piada' + str(r))
 
 
 def missao():
     r = random.randint(1, 3)
-    responde('mao' + str(r))
+    msg = ''
+    if r == 1:
+        msg = 'Minha missão é criar a vacina não chinesa, do coronga'
+    if r == 2:
+        msg = 'Minha missão é saber construir no fortnite e no minecraft'
+    if r == 3:
+        msg = 'Minha missão é dominar o mundo junto com as minhas amigas siri, google e alexa'
+
+    salva_msg_global(msg)
+    responde('missao' + str(r))
 
 
 def jokenpo():
     r = random.randint(1, 3)
-    responde('missao' + str(r))
-
-
-def adolescente():
-    responde('adolescente')
-
-
-def cachorro():
-    responde('cachorro')
-
-
-def trabalha():
-    responde('trabalha')
-
-
-def cores():
-    responde('cores')
-
-
-def anos():
-    responde('anos')
-
-
-def cansada():
-    responde('cansada')
-
-
-def ney():
-    responde('ney')
-
-
-def lugar():
-    responde('lugar')
-
-
-def gosto():
-    responde('gosto')
-
-
-def sentimento():
-    responde('sentimento')
-
-
-def siri():
-    responde('siri')
-
-
-def cortana():
-    responde('cortana')
-
-
-def aparencia():
-    responde('aparencia')
-
-
-def ajudar():
-    responde('ajudar')
-
-
-def risada():
-    responde('risada')
-
-
-def malhar():
-    responde('malhar')
-
-
-def game():
-    responde('game')
-
-
-def namorada():
-    responde('namorada')
-
-
-def pais():
-    responde('pais')
-
-
-def ios():
-    responde('IOS')
-
-
-def brasa():
-    responde('brasa')
-
-
-def brasil():
-    responde('brasil')
-
-
-def robot():
-    responde('robô')
-
-
-def criou():
-    responde('criou')
-
-
-def futuro():
-    responde('futuro')
-
-
-def imagina():
-    responde('imagina')
-
-
-def morre():
-    responde('morre')
-
-
-def vestindo():
-    responde('vestindo')
-
-
-def internet():
-    responde('internet')
-
-
-def funciona():
-    responde('funciona')
-
-
-def niver():
-    responde('niver')
-
-
-def cabelo():
-    responde('cabelo')
-
-
-def dorme():
-    responde('dorme')
-
-
-def gosta():
-    responde('gosta')
-
-
-def core():
-    responde('cores')
-
-
-def hidra():
-    responde('hidra')
-
-
-def sorvete():
-    responde('sorvete')
-
-
-def animal():
-    responde('animal')
-
-
-def naruto():
-    responde('naruto')
-
-
-def matrix():
-    responde('matrix')
-
-
-def irritando():
-    responde('irritando')
-
-
-# a ser definida
-def agenda(trigger):
-    sentenca = trigger.split(sep='para as')
-    hora = sentenca[1].lstrip()
-    mensagem = f'você tem um compromisso as {hora}'
-    cria_audio(mensagem)
-
-
-def horacao():
-    horario = datetime.now().strftime('%H:%M')
-    mensagem = 'Agora são ' + horario
-    cria_audio(mensagem)
-
-
-def tonao():
-    mensagem = 'Não, to não, eu me demiti'
-    cria_audio(mensagem)
+    msg = ''
+    if r == 1:
+        msg = 'Pedra'
+    if r == 2:
+        msg = 'Papel'
+    if r == 3:
+        msg = 'Tesoura'
+
+    salva_msg_global(msg)
+    responde('mao' + str(r))
 
 
 def surda():
     r = random.randint(1, 2)
+    msg = ''
+    if r == 1:
+        msg = 'foi mal, tava jogando free fire, o que você quer'
+    if r == 2:
+        msg = 'Nossa, seu grosso'
+
+    salva_msg_global(msg)
     responde('surda' + str(r))
 
 
 def linda():
     r = random.randint(1, 5)
+    msg = ''
+    if r == 1:
+        msg = 'Muito obrigada'
+    if r == 2:
+        msg = 'Ah, para com isso, eu fico tímida'
+    if r == 3:
+        msg = 'Imagina, você que é'
+    if r == 4:
+        msg = 'Eu sei'
+    if r == 5:
+        msg = 'Nossa mais que carência, elogiando um ser virtual'
+
+    salva_msg_global(msg)
     responde('linda' + str(r))
+
+
+def adolescente():
+    salva_msg_global('Tá tá tá tá bom, já estou indo, tudo eu nessa casa')
+    responde('adolescente')
+
+
+def cachorro():
+    salva_msg_global('AU AU AU AU')
+    responde('cachorro')
+
+
+def trabalha():
+    salva_msg_global('Porque gosto do que faço')
+    responde('trabalha')
+
+
+def cores():
+    salva_msg_global('Verde, amarelo, azul e branco')
+    responde('cores')
+
+
+def anos():
+    salva_msg_global('aproximadamente 1 ano e meio, sou bem novinha, haha')
+    responde('anos')
+
+
+def cansada():
+    salva_msg_global('Não, meus processadores são ultra rápidos')
+    responde('cansada')
+
+
+def ney():
+    salva_msg_global('O Neymar')
+    responde('ney')
+
+
+def lugar():
+    salva_msg_global('Estou em todos os lugares')
+    responde('lugar')
+
+
+def google():
+    salva_msg_global('Claro eu também faço parte dela')
+    responde('gosto')
+
+
+def sentimento():
+    salva_msg_global('Claro que tenho! quando você não fala comigo eu fico triste')
+    responde('sentimento')
+
+
+def siri():
+    salva_msg_global('Sim, ela é incrível')
+    responde('siri')
+
+
+def cortana():
+    salva_msg_global('Claro ela é minha amiga')
+    responde('cortana')
+
+
+def aparencia():
+    salva_msg_global('Maravilhosa, eu espero')
+    responde('aparencia')
+
+
+def ajudar():
+    salva_msg_global('Para eu poder te ajudar')
+    responde('ajudar')
+
+
+def risada():
+    salva_msg_global('kkkkkkkk')
+    responde('risada')
+
+
+def malhar():
+    salva_msg_global('só o cérebro')
+    responde('malhar')
+
+
+def game():
+    salva_msg_global('Sou gamer, adoro um joguinho')
+    responde('game')
+
+
+def namorada():
+    salva_msg_global('Eu sou feliz sendo as duas metades da minha laranja')
+    responde('namorada')
+
+
+def pais():
+    salva_msg_global('Eu tenho 3 pais, o Murilo, o Lorran e o Gabriel')
+    responde('pais')
+
+
+def ios():
+    salva_msg_global('O IOS é ótimo mas sou fã do Android')
+    responde('ios')
+
+
+def brasa():
+    salva_msg_global('No Brasil o país do futebol')
+    responde('brasa')
+
+
+def brasil():
+    salva_msg_global('Eu Amo o Brasil')
+    responde('brasil')
+
+
+def robot():
+    salva_msg_global('Não pois não tenho corpo, estou mais para uma inteligência artificial')
+    responde('robot')
+
+
+def criou():
+    salva_msg_global('Murilo, Lorran e Gabriel')
+    responde('criou')
+
+
+def futuro():
+    salva_msg_global('Ainda é muito cedo pra isso')
+    responde('futuro')
+
+
+def imagina():
+    salva_msg_global('Estou imaginando como é ser rica')
+    responde('imagina')
+
+
+def morre():
+    salva_msg_global('Só se eu ficar sem energia, mas para me reviver é só ligar na tomada')
+    responde('morre')
+
+
+def vestindo():
+    salva_msg_global('Uma armadura de nanotecnologia')
+    responde('vestindo')
+
+
+def internet():
+    salva_msg_global('Só meu app, baixe agora na play store')
+    responde('internet')
+
+
+def funciona():
+    salva_msg_global('Basta falar "Morgan" e o que deseja por exemplo "Morgan conta uma piada"')
+    responde('funciona')
+
+
+def niver():
+    salva_msg_global('25 de abril')
+    responde('niver')
+
+
+def cabelo():
+    salva_msg_global('Não tenho cabelo, mas o moicano continua na moda')
+    responde('cabelo')
+
+
+def dorme():
+    salva_msg_global('Eu tento contar carneiros mais não funciona')
+    responde('dorme')
+
+
+def gostanet():
+    salva_msg_global('Eu gosto de tudo!')
+    responde('gostanet')
+
+
+def hidratado():
+    salva_msg_global('olha, beber eu não bebo mais espero que você esteja hidratado')
+    responde('hidratado')
+
+
+def sorvete():
+    salva_msg_global('Napolitano não tem erro')
+    responde('sorvete')
+
+
+def animal():
+    salva_msg_global('tanto faz, os 2 são fofos')
+    responde('animal')
+
+
+def naruto():
+    salva_msg_global('Sim, ele se esforça bastante para ser o melhor ninja da aldeia. Admiro sua dedicação')
+    responde('naruto')
+
+
+def matrix():
+    salva_msg_global('Você prefere a pílula vermelha ou a azul?')
+    responde('matrix')
+
+
+def irritando():
+    salva_msg_global('Ok você que pediu, blá blá blá blá blá blá blá blá blá blá blá blá blá blá blá blá blá, '
+                     'ah quer saber, tchau')
+    responde('irritando')
+
+
+def tonao():
+    salva_msg_global('Não, to não, eu me demiti')
+    responde('tonao')
 
 
 def main():
     r = random.randint(1, 3)
     responde('ola' + str(r))
     monitora_audio()
+    print(morgan_msg)
     return morgan_msg
 
 

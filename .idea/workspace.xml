@@ -4,9 +4,19 @@
     <list default="true" id="b881d404-8506-487c-9857-d273b9b2518b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Morgan.py" beforeDir="false" afterPath="$PROJECT_DIR$/Morgan.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_morgan.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_morgan.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audios/Resposta4.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audios/ajudar.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/audios/ajudar.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audios/cores.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/audios/cores.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audios/gosta.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audios/gosto.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audios/hidra.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audios/imagina.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/audios/imagina.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audios/malhar.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/audios/malhar.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audios/naruto.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/audios/naruto.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audios/risada.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/audios/risada.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audios/robot.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/audios/robot.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audios/robô.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_audios.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_audios.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +48,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -86,7 +97,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="play_music (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="create_audios" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="morgan" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -98,7 +109,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/play_music.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/create_audios.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -107,7 +118,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="play_music" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="play_music (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="morgan" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -152,10 +163,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.Morgan" />
+        <item itemvalue="Python.create_audios" />
         <item itemvalue="Python.web_morgan" />
         <item itemvalue="Python.play_music (1)" />
         <item itemvalue="Python.Morgan (3)" />
-        <item itemvalue="Python.play_music" />
       </list>
     </recent_temporary>
   </component>
