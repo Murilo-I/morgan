@@ -12,6 +12,7 @@ from open_browsers import abrir
 # CONFIGURAÇÕES #
 
 hotword = 'morgan'
+morgan_msg = ''
 
 
 # FUNÇÕES PRINCIPAIS #
@@ -20,6 +21,7 @@ def monitora_audio():
     microfone = sr.Recognizer()
     with sr.Microphone() as source:
         while True:
+            microfone.adjust_for_ambient_noise(source)
             print("Aguardando Comando: ")
             audio = microfone.listen(source)
 
@@ -44,10 +46,21 @@ def monitora_audio():
 
 
 def responde(arquivo):
+    # micro = sr.Recognizer
+    # with sr.AudioFile('audios/' + arquivo + '.mp3') as source:
+    #     audio = micro.listen(source)
+    #     try:
+    #         text = micro.recognize_google(audio, language="pt-BR")
+    #         global morgan_msg
+    #         morgan_msg = text
+    #     except sr.UnknownValueError:
+    #         print("Erro transcrevendo o audio")
     playsound('audios/' + arquivo + '.mp3')
 
 
 def cria_audio(mensagem):
+    global morgan_msg
+    morgan_msg = mensagem
     tss = gTTS(mensagem, lang='pt-br')
     tss.save('audios/mensagem.mp3')
     print('Morgan: ' + mensagem)
@@ -125,10 +138,10 @@ def executa_comandos(trigger):
     elif 'você tem sentimentos' in trigger:
         sentimento()
 
-    elif 'você gosta da Siri' in trigger:
+    elif 'você gosta da siri' in trigger:
         siri()
 
-    elif 'você gosta da Cortana' in trigger:
+    elif 'você gosta da cortana' in trigger:
         cortana()
 
     elif 'como você se parece' in trigger:
@@ -161,7 +174,7 @@ def executa_comandos(trigger):
     elif 'onde você nasceu' in trigger:
         brasa()
 
-    elif 'você gosta do Brasil' in trigger:
+    elif 'você gosta do brasil' in trigger:
         brasil()
 
     elif 'você é um robô' in trigger:
@@ -182,7 +195,7 @@ def executa_comandos(trigger):
     elif 'o que você está vestindo' in trigger:
         vestindo()
 
-    elif 'você funciona sem Internet' in trigger:
+    elif 'você funciona sem internet' in trigger:
         internet()
 
     elif 'como você funciona' in trigger:
@@ -197,7 +210,7 @@ def executa_comandos(trigger):
     elif 'você dorme' in trigger:
         dorme()
 
-    elif 'qual sua coisa preferida na Internet' in trigger:
+    elif 'qual sua coisa preferida na internet' in trigger:
         gosta()
 
     elif 'qual a sua cor preferida' in trigger:
@@ -212,10 +225,10 @@ def executa_comandos(trigger):
     elif 'cachorros ou gatos' in trigger:
         animal()
 
-    elif 'você gosta de Naruto' in trigger:
+    elif 'você gosta de naruto' in trigger:
         naruto()
 
-    elif 'nós estamos na Matrix' in trigger:
+    elif 'nós estamos na matrix' in trigger:
         matrix()
 
     elif '+' or '-' or 'x' or '/' in trigger:
@@ -338,7 +351,7 @@ def funcoes_matematicas(trigger: str):
         else:
             cria_audio(error_msg)
 
-            # RESPOSTAS #
+# RESPOSTAS #
 
 
 def curiosidade():
@@ -529,7 +542,7 @@ def irritando():
 def agenda(trigger):
     sentenca = trigger.split(sep='para as')
     hora = sentenca[1].lstrip()
-    mensagem = f'você tem um compromisso as {hora}, ou seja, agora'
+    mensagem = f'você tem um compromisso as {hora}'
     cria_audio(mensagem)
 
 
@@ -557,8 +570,8 @@ def linda():
 def main():
     r = random.randint(1, 3)
     responde('ola' + str(r))
-    while True:
-        monitora_audio()
+    monitora_audio()
+    return morgan_msg
 
 
 main()

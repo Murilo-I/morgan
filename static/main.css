@@ -147,6 +147,12 @@ img {
     opacity: 70%;
 }
 
+.morgan-msg {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+}
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Poppins&display=swap');
 * {
     margin: 0;

@@ -3,6 +3,7 @@ from flask_mysqldb import MySQL
 from wtforms import Form, StringField, PasswordField, validators, ValidationError
 from models import Usuario
 from daos import UsuarioDao
+# from Morgan import main
 
 # CONFIGURAÇÕES #
 
@@ -16,6 +17,8 @@ app.config['MYSQL_PORT'] = 3306
 
 db = MySQL(app)
 dao = UsuarioDao(db)
+
+msgs = []
 
 
 # REGRAS DE VALIDAÇÃO #
@@ -56,7 +59,7 @@ def naweb():
 
 @app.route('/morgan_assistant')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', mensagens=msgs)
 
 
 @app.route('/morgan_assistant/registrar')
@@ -115,6 +118,9 @@ def funcionalidades():
 
 @app.route('/morgan_assistant/rodar')
 def rodar():
+    # main()
+    # msg = main()
+    # msgs.append(msg)
     return redirect(url_for('index'))
 
 
