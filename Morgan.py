@@ -654,7 +654,6 @@ def main():
     r = random.randint(1, 3)
     responde('ola' + str(r))
     monitora_audio()
-    print(morgan_msg)
     return morgan_msg
 
 
