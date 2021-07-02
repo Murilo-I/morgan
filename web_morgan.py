@@ -1,6 +1,5 @@
 from flask import Flask, render_template, redirect, request, url_for, session, flash
 from flask_mysqldb import MySQL
-from wtforms import Form, StringField, PasswordField, validators, ValidationError
 from models import Usuario
 from daos import UsuarioDao
 # from Morgan import main
@@ -19,34 +18,6 @@ db = MySQL(app)
 dao = UsuarioDao(db)
 
 msgs = []
-
-
-# REGRAS DE VALIDAÇÃO #
-
-def validate_username(form, username):
-    if dao.buscar_por_id(username.data):
-        raise ValidationError('Esse username já existe')
-
-
-def validate_email(form, email):
-    if dao.busca_por_email(email.data):
-        raise ValidationError('Esse email já foi cadastrado')
-
-
-class ValidaFormulario(Form):
-    username = StringField('username', [
-        validators.Length(min=4, max=25,
-                          message='Username deve ter entre 4 e 25 caracteress'),
-        validators.DataRequired(), validate_username
-    ])
-    email = StringField('email', [validators.DataRequired(), validate_email])
-    senha = PasswordField('senha', [
-        validators.Length(min=8, max=32,
-                          message='Senha deve ter entre 8 e 32 caracteres'),
-        validators.EqualTo('confirma', message='Senha confirmada incorretamente'),
-        validators.DataRequired()
-    ])
-    confirma = PasswordField('confirma', [validators.DataRequired()])
 
 
 # INTEGRAÇÃO WEB #
