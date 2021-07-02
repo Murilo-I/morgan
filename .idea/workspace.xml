@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b881d404-8506-487c-9857-d273b9b2518b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daos.py" beforeDir="false" afterPath="$PROJECT_DIR$/daos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/alteracaosenha.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/alteracaosenha.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cadastro.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cadastro.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daos.py" beforeDir="false" afterPath="$PROJECT_DIR$/dao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prepara_banco.py" beforeDir="false" afterPath="$PROJECT_DIR$/prepara_banco.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_morgan.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_morgan.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

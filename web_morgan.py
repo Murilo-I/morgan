@@ -1,7 +1,8 @@
 from flask import Flask, render_template, redirect, request, url_for, session, flash
 from flask_mysqldb import MySQL
 from models import Usuario
-from daos import UsuarioDao
+from dao import UsuarioDao
+import bcrypt
 # from Morgan import main
 
 # CONFIGURAÇÕES #
@@ -73,7 +74,8 @@ def login():
 @app.route('/morgan_assistant/autenticar', methods=['POST'])
 def autenticar():
     usuario = dao.buscar_por_id(request.form['username'])
-    if usuario and usuario.senha == request.form['senha']:
+    senha_correta = bcrypt.checkpw(request.form['senha'].encode('utf8'), usuario.senha.encode('utf8'))
+    if usuario and senha_correta:
         session['usuario_logado'] = usuario.id
         flash(usuario.id + ' logou com sucesso!')
         proxima_pagina = request.form['logado']

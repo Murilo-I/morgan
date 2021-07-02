@@ -1,4 +1,5 @@
 import MySQLdb
+import bcrypt
 
 conn = MySQLdb.connect(user='root', passwd='Mysql8024', host='127.0.0.1', port=3306)
 
@@ -12,20 +13,23 @@ criar_tabelas = '''SET NAMES latin1;
     CREATE TABLE `usuario` (
       `username` varchar(55) COLLATE utf8_bin NOT NULL,
       `email` varchar(55) COLLATE utf8_bin NOT NULL UNIQUE,
-      `senha` varchar(55) COLLATE utf8_bin NOT NULL,
+      `senha` varchar(100) COLLATE utf8_bin NOT NULL,
       PRIMARY KEY (`username`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;'''
 
 conn.cursor().execute(criar_tabelas)
 
-# inserindo usuarios
+senha = '12345678'
+encript = bcrypt.hashpw(senha.encode('utf8'), bcrypt.gensalt())
+
+# inserindo usuarios com senhas encriptadas
 cursor = conn.cursor()
 cursor.executemany(
       'INSERT INTO morgan.usuario (username, email, senha) VALUES (%s, %s, %s)',
       [
-            ('marquês', 'marques@gmail.com', '12345678'),
-            ('nicogamer', 'nicogamer@gmail.com', '12345678'),
-            ('daniTheQueen', 'danisantos@gmail.com', '12345678')
+            ('marquês', 'marques@gmail.com', f'{encript}'),
+            ('nicogamer', 'nicogamer@gmail.com', f'{encript}'),
+            ('daniTheQueen', 'danisantos@gmail.com', f'{encript}')
       ])
 
 cursor.execute('select * from morgan.usuario')

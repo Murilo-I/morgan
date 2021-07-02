@@ -1,5 +1,6 @@
 from models import Usuario
 from flask import flash
+import bcrypt
 
 SQL_USUARIO_POR_ID = 'SELECT username, email, senha from usuario where username = %s'
 SQL_USUARIO_POR_EMAIL = 'SELECT username, email, senha from usuario where email = %s'
@@ -13,12 +14,14 @@ class UsuarioDao:
 
     def salvar(self, user, eh_cadastrado):
         cursor = self.__db.connection.cursor()
+        senha = user.senha
+        encript = bcrypt.hashpw(senha.encode('utf8'), bcrypt.gensalt())
         if eh_cadastrado:
-            cursor.execute(SQL_ATUALIZA_SENHA, (user.senha, user.id))
+            cursor.execute(SQL_ATUALIZA_SENHA, (encript, user.id))
             flash('Senha alterada com sucesso!')
         else:
             try:
-                cursor.execute(SQL_CRIA_USUARIO, (user.id, user.email, user.senha))
+                cursor.execute(SQL_CRIA_USUARIO, (user.id, user.email, encript))
                 flash(user.id + ' cadastrado com sucesso!')
             except:
                 flash('Username ou email já cadastrado')
