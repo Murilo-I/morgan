@@ -96,7 +96,7 @@
                     <button onclick="visible('associe-se')" class="b-asso">ASSOCIE-SE</button>
                     <div class="associe-se">
                         Já possui cadastro? Informe seu email e entraremos em contato.
-                        <form onsubmit="showMessage(event, 'Email enviado com sucesso')">
+                        <form onsubmit="successMessage(event, 'Email enviado com sucesso')">
                             <input id="email" type="email" placeholder="seu@email.com" required>
                             <button type="submit">enviar</button>
                         </form>
@@ -107,12 +107,14 @@
     </div>
 
     <div id="snack-success"></div>
-    <div id="snack-danger">Erro genérico acontecendo!</div>
 
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
-                    <div class="login-msg" style="color: white;
+                    {% if message=="Username ou email já cadastrado" %}
+                        <div id="snack-danger">{{ message }}</div>
+                    {% else %}
+                        <div class="login-msg" style="color: white;
                         background-color: green;
                         padding: 10px;
                         display: inline-block;
@@ -120,6 +122,7 @@
                         bottom: 20px;
                         z-index: 2;
                         left: 20px;">{{ message }}</div>
+                    {% endif %}
                 {% endfor %}
             {% endif %}
         {% endwith %}
@@ -146,15 +149,19 @@
         }
         
         var ss = document.getElementById('snack-success');
-        var sd = document.getElementById('snack-danger');
-        var email = document.querySelector('input#email');
-
-        function showMessage(event, msg) {
+        function successMessage(event, msg) {
             event.preventDefault();
             ss.innerHTML = msg;
             ss.classList.add('show');
             setTimeout(function() {ss.classList.remove('show')}, 3000);
             invisible('associe-se');
+        }
+
+        var sd = document.getElementById('snack-danger');
+        document.body.onload = onload;
+        function onload() {
+            sd.classList.add('show');
+            setTimeout(function() {sd.classList.remove('show')}, 3000);
         }
 
         $('#soft-link').click(function(event) {

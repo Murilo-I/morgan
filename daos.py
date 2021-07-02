@@ -13,16 +13,16 @@ class UsuarioDao:
 
     def salvar(self, user, eh_cadastrado):
         cursor = self.__db.connection.cursor()
-        try:
-            if eh_cadastrado:
-                cursor.execute(SQL_ATUALIZA_SENHA, (user.senha, user.id))
-                flash('Senha alterada com sucesso!')
-            else:
+        if eh_cadastrado:
+            cursor.execute(SQL_ATUALIZA_SENHA, (user.senha, user.id))
+            flash('Senha alterada com sucesso!')
+        else:
+            try:
                 cursor.execute(SQL_CRIA_USUARIO, (user.id, user.email, user.senha))
                 flash(user.id + ' cadastrado com sucesso!')
-            self.__db.connection.commit()
-        except:
-            flash('Usuário ou email já cadastrado')
+            except:
+                flash('Username ou email já cadastrado')
+        self.__db.connection.commit()
 
     def buscar_por_id(self, user_id):
         cursor = self.__db.connection.cursor()

@@ -35,43 +35,49 @@ def index():
 
 @app.route('/morgan_assistant/registrar')
 def registrar():
-    form = ValidaFormulario(request.form)
-    return render_template('cadastro.html', form=form)
+    return render_template('cadastro.html', title='Cadastro')
 
 
 @app.route('/morgan_assistant/criar', methods=['POST'])
 def criar():
-    form = ValidaFormulario(request.form)
-
-    if form.validate():
-        usuario = Usuario(form.username.data, form.email.data, form.senha.data)
+    senha = request.form['senha']
+    confirma = request.form['confirma']
+    if senha != confirma:
+        flash('senha confirmada incorretamente')
+        return redirect(url_for('registrar'))
+    else:
+        usuario = Usuario(request.form['username'], request.form['email'], senha)
         dao.salvar(usuario, None)
         return redirect(url_for('index'))
 
 
 @app.route('/morgan_assistant/atualizar', methods=['POST'])
 def atualizar():
-    usuario = Usuario(request.form['username'], request.form['email'], request.form['senha'])
-    eh_cadastrado = request.form.get('cadastrado')
-    dao.salvar(usuario, eh_cadastrado)
-    return redirect(url_for('index'))
+    senha = request.form['senha']
+    confirma = request.form['confirma']
+    if senha != confirma:
+        flash('senha confirmada incorretamente')
+        return redirect(url_for('mudar_senha'))
+    else:
+        usuario = Usuario(request.form['username'], request.form['email'], senha)
+        dao.salvar(usuario, request.form.get('cadastrado'))
+        return redirect(url_for('index'))
 
 
 @app.route('/morgan_assistant/login')
 def login():
     proxima_pagina = request.args.get('logado')
-    return render_template('login.html', logado=proxima_pagina)
+    return render_template('login.html', logado=proxima_pagina, title='Login')
 
 
 @app.route('/morgan_assistant/autenticar', methods=['POST'])
 def autenticar():
     usuario = dao.buscar_por_id(request.form['username'])
-    if usuario:
-        if usuario.senha == request.form['senha']:
-            session['usuario_logado'] = usuario.id
-            flash(usuario.id + ' logou com sucesso!')
-            proxima_pagina = request.form['logado']
-            return redirect(proxima_pagina)
+    if usuario and usuario.senha == request.form['senha']:
+        session['usuario_logado'] = usuario.id
+        flash(usuario.id + ' logou com sucesso!')
+        proxima_pagina = request.form['logado']
+        return redirect(proxima_pagina)
     else:
         flash('Falha no login, tente novamente!')
         return redirect(url_for('login'))
@@ -79,7 +85,7 @@ def autenticar():
 
 @app.route('/morgan_assistant/mudar_senha')
 def mudar_senha():
-    return render_template('alteracaosenha.html')
+    return render_template('alteracaosenha.html', title='Alterar Senha')
 
 
 @app.route('/morgan_assistant/funcionalidades')

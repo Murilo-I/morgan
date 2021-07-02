@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-    <title>Cadastro</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="icon" href="{{ url_for('static', filename='morgan_icon.png') }}">
-</head>
-<body>
+{% extends "template_acl.html" %}
+{% block content %}
     <form class="box" action="{{ url_for('criar') }}" method="post">
         <h1>Cadastro</h1>
         <br>
@@ -20,36 +13,12 @@
         <br>
         <p class="description-primary">Coloque seus dados pessoais</p>
 
-        <input class="inputField" required type="text" name="username" placeholder="Username">
+        <input class="inputField" pattern=".{4,25}" title="de 4 a 25 caracteres" required type="text"
+               name="username" placeholder="Username">
         <input class="inputField" required type="email" name="email" placeholder="Email">
-        <input class="inputField" required type="password" name="senha" placeholder="Senha">
+        <input class="inputField" required minlength="8" type="password" name="senha" placeholder="Senha">
         <input class="inputField" required type="password" name="confirma" placeholder="Confirmar senha">
 
         <input type="submit" value="Criar conta">
     </form>
-
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-                <div class="erro" style="color: white;
-                    background-color: red;
-                    padding: 10px;
-                    display: inline-block;
-                    position: fixed;
-                    bottom: 20px;
-                    left: 20px;">{{ message }}</div>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-    <script>
-        $().ready(function() {
-			setTimeout(function() {
-				$('.erro').hide();
-			}, 3000);
-		});
-    </script>
-</body>
-</html>
+{% endblock %}
