@@ -344,22 +344,6 @@ img {
     position: static;
 }
 
-.list-func {
-    margin-top: 5vw;
-    margin-left: 10vw;
-    margin-right: 10vw;
-    color: white;
-}
-
-.rgb {
-    background-color: #3498DB;
-    padding: 15px;
-    margin-top: 17px;
-    margin-bottom: 17px;
-    border-radius: 7px;
-    font-size: 20px;
-}
-
 @media (max-width: 600px) {
     .logo {
         margin-top: 23%;
@@ -389,9 +373,5 @@ img {
     .logo {
         margin-top: 23%;
         justify-content: center;
-    }
-
-    .list-func {
-        margin-top: 15vw;
     }
 }

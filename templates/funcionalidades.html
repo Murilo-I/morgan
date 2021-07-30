@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='func.css') }}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
     <link rel="icon" href="{{ url_for('static', filename='morgan_icon.png') }}">
-    <link rel="stylesheet" href="list_style.css">
     <title>Funcionalidades</title>
 </head>
 
@@ -37,33 +38,57 @@
         </div>
     </div>
 
+     <h1 class="title">O que a Morgan pode fazer?</h1><br>
+
     <div class="list-func">
-        <h1 style="text-align: center">O que a Morgan pode fazer?</h1><br>
-        <p class="rgb">
-            Operações matemáticas simples
-        </p>
-        <p class="rgb">
+        <div class="card">
+            <i class="fas fa-calculator"></i>
+            Operações matemáticas
+        </div>
+        <div class="card">
+            <i class="far fa-laugh-beam"></i>
             Contar piadas
-        </p>
-        <p class="rgb">
+        </div>
+        <div class="card">
+            <i class="fas fa-search"></i>
             Citar curiosidades
-        </p>
-        <p class="rgb">
+        </div>
+        <div class="card">
+            <i class="fas fa-music"></i>
             Tocar playlists
-        </p>
-        <p class="rgb">
+        </div>
+        <div class="card">
+            <i class="fas fa-temperature-high"></i>
             Trazer a temperatura do local
-        </p>
-        <p class="rgb">
+        </div>
+        <div class="card">
+            <i class="far fa-newspaper"></i>
             Buscar notícias
-        </p>
-        <p class="rgb">
+        </div>
+        <div class="card">
+            <i class="fab fa-chrome"></i>
             Abrir sites
-        </p>
-        <p class="rgb">
+        </div>
+        <div id="drop-list" class="card" style="cursor: pointer">
+            <i class="fas fa-caret-down"></i>
             +30 funções de interatividade
-        </p>
+            <div class="drop-itens">
+                <p>Pedra papel tesoura</p>
+                <p>Você gosta da Alexa</p>
+                <p>E da Siri ou da Google</p>
+                <p>O que você está vestindo</p>
+                <p>Quem te criou</p>
+                <p>Você tem sentimentos</p>
+                <p>Cachorros ou gatos</p>
+                <p>...</p>
+            </div>
+        </div>
     </div>
+
+    <script>
+        document.querySelector('#drop-list').addEventListener('click', () =>
+            document.querySelector('.drop-itens').classList.toggle('show-itens'));
+    </script>
 
 </body>
 
