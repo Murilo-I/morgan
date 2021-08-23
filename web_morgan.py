@@ -3,7 +3,7 @@ from flask_mysqldb import MySQL
 from models import Usuario
 from dao import UsuarioDao
 import bcrypt
-# from Morgan import main
+from Morgan import main
 
 # CONFIGURAÇÕES #
 
@@ -97,9 +97,8 @@ def funcionalidades():
 
 @app.route('/morgan_assistant/rodar')
 def rodar():
-    # main()
-    # msg = main()
-    # msgs.append(msg)
+    msg = main()
+    msgs.append(msg)
     return redirect(url_for('index'))
 
 

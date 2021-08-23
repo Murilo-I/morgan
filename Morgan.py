@@ -655,6 +655,3 @@ def main():
     responde('ola' + str(r))
     monitora_audio()
     return morgan_msg
-
-
-main()

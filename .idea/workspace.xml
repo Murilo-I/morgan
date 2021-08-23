@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b881d404-8506-487c-9857-d273b9b2518b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Morgan.py" beforeDir="false" afterPath="$PROJECT_DIR$/Morgan.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/funcionalidades.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/funcionalidades.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_morgan.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_morgan.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +45,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunManager" selected="Python.web_morgan">
     <configuration name="Morgan (3)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
