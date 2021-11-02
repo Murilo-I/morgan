@@ -132,15 +132,9 @@ def abrir(trigger):
     elif 'telecine' in trigger:
         browser.open('https://www.telecineplay.com.br/entrar')
 
-    elif 'prime video' in trigger:
-        browser.open('https://www.amazon.com/ap/signin?accountStatusPolicy=P1&clientContext=130-5978973-8310049&'
-                     'language=pt_BR&openid.assoc_handle=amzn_prime_video_desktop_us&openid.claimed_id=http%3A%2'
-                     'F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.'
-                     'openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2'
-                     'Fspecs.openid.net%2Fauth%2F2.0&openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2F'
-                     'pape%2F1.0&openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.primevideo.com%2'
-                     'Fauth%2Freturn%2Fref%3Dav_auth_ap%3F_encoding%3DUTF8%26location%3D%252Fref%253Ddv_auth_ret%253F'
-                     '_encoding%253DUTF8%2526language%253Dpt_BR')
+    elif 'prime vídeo' in trigger:
+        browser.open('https://www.primevideo.com/?ref_=dvm_pds_amz_br_dc_s_g_mkw_s2Hv03IvM-dc_pcrid_388732931008&'
+                     'mrntrk=slid__pgrid_62046161446_pgeo_1001731_x__ptid_kwd-296527732991')
 
     elif 'amazon' in trigger:
         browser.open('https://www.amazon.com.br/')

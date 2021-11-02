@@ -56,22 +56,22 @@ def whato_play(trigger):
     elif 'akon' in trigger:
         playlists('Akon')
 
-    elif 'marron five' in trigger:
-        playlists('Marron 5')
+    elif 'maroon five' in trigger:
+        playlists('Maroon 5')
 
-    elif '24kGoldn' in trigger:
+    elif '24k gold' in trigger:
         playlists('24kGoldn')
 
-    elif 'juice wrld' in trigger:
-        playlists('Juice WRLD')
+    elif 'barões da pisadinha' in trigger:
+        playlists('barões')
 
-    elif 'roddy ricch' in trigger:
+    elif 'rod rich' in trigger:
         playlists('Roddy Ricch')
 
     elif 'drake' in trigger:
         playlists('Drake')
 
-    elif 'dababy' in trigger:
+    elif 'da baby' in trigger:
         playlists('Dababy')
 
     elif 'travis scott' in trigger:
@@ -193,8 +193,8 @@ def playlists(album):
     elif album == '24kGoldn':
         browser.open('https://www.youtube.com/watch?v=GrAchTdepsU&list=PLnm5twXf5qy0DE4nLTU04Jf_s-4u1VTGU&index=1')
 
-    elif album == 'Juice WRLD':
-        browser.open('https://www.youtube.com/watch?v=C5i-UnuUKUI&list=PL-JoUlugMMxiLdkHd537jZefZ9walk3Wp&index=1')
+    elif album == 'barões':
+        browser.open('https://www.youtube.com/watch?v=k4xGU8xoA6w')
 
     elif album == 'Roddy Ricch':
         browser.open('https://www.youtube.com/watch?v=uLHqpjW3aDs&list=PLMlu2IEkz0RG9qmicsRrEU5lM9rwOA1YB&index=1')

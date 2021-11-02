@@ -4,8 +4,20 @@
     <list default="true" id="b881d404-8506-487c-9857-d273b9b2518b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Morgan.py" beforeDir="false" afterPath="$PROJECT_DIR$/Morgan.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audios/Resposta1.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/audios/Resposta1.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audios/Resposta2.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/audios/Resposta2.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audios/Resposta3.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/audios/Resposta3.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audios/naoEntendi1.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/audios/naoEntendi1.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audios/naoEntendi2.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/audios/naoEntendi2.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audios/naoEntendi3.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/audios/naoEntendi3.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audios/naoEntendi4.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/audios/naoEntendi4.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audios/naoEntendi5.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/audios/naoEntendi5.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audios/ola1.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/audios/ola1.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audios/ola2.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/audios/ola2.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audios/ola3.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/audios/ola3.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/open_browsers.py" beforeDir="false" afterPath="$PROJECT_DIR$/open_browsers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/play_music.py" beforeDir="false" afterPath="$PROJECT_DIR$/play_music.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_morgan.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_morgan.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,8 +168,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.web_morgan" />
-        <item itemvalue="Python.Morgan" />
         <item itemvalue="Python.create_audios" />
+        <item itemvalue="Python.Morgan" />
         <item itemvalue="Python.play_music (1)" />
         <item itemvalue="Python.Morgan (3)" />
       </list>

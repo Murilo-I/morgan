@@ -67,12 +67,18 @@ def executa_comandos(trigger):
         responde('Resposta1')
         ultimas_noticias()
 
+    elif 'liga o ar condicionado' in trigger:
+        responde('Resposta1')
+        ar_condicionado()
+
     elif 'toca' in trigger:
         responde('Resposta1')
         whato_play(trigger)
+        salva_msg_global(f'tocando {trigger.split(sep="toca")[1]}')
 
     elif 'abrir' in trigger:
         abrir(trigger)
+        salva_msg_global(f'{trigger.split(sep="abrir")[1]} aberto(a)')
 
     elif 'piada' in trigger:
         piada()
@@ -230,6 +236,7 @@ def executa_comandos(trigger):
     else:
         mensagem = trigger.strip(hotword)
         cria_audio(mensagem)
+        salva_msg_global(mensagem)
         print('Comando inválido: ', mensagem)
         r = random.randint(2, 3)
         responde('Resposta' + str(r))
@@ -274,7 +281,7 @@ def previsao_tempo(tempo=False, minmax=False):
     mensagem = ''
 
     if tempo:
-        mensagem = f'Agora fazem {temp} graus em {localizacao_atual}. Clima: {desc}'
+        mensagem = f'Agora faz {temp} graus em {localizacao_atual}. Clima: {desc}'
     elif minmax:
         mensagem = f'Hoje a mínima será de {min_temp} e a máxima de {max_temp}'
 
@@ -355,6 +362,11 @@ def horacao():
 
 
 # RESPOSTAS #
+
+
+def ar_condicionado():
+    salva_msg_global('ligando ar condicionado')
+    responde('arcondicionado')
 
 
 def curiosidade():
