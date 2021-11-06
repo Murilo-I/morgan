@@ -20,7 +20,10 @@
 		        <a id="soft-link" href="#cards">Quem somos?</a>
                 <a href="{{ url_for('login') }}">Cadastro</a>
                 <a href="{{ url_for('funcionalidades') }}">Lista de funcionalidades</a>
-                <a href="#">Contato</a>
+                <div class="popover" onclick="invisible('contato')">
+                    <a href="#" onclick="visible('contato')">Contato </a>
+                    <div class="contato">+55 (11) 99510-0578</div>
+                </div>
             </nav>
         </div>
     </header>
@@ -37,7 +40,7 @@
                 <a id="soft-link" href="#cards">Quem somos?</a>
                 <a href="{{ url_for('login') }}">Cadastro</a>
                 <a href="{{ url_for('funcionalidades') }}">Lista de funcionalidades</a>
-                <a href="#">Contato</a>
+                <a href="#">Contato: </a><a style="margin-top:0">+55 (11) 99510-0578</a>
             </nav>
             <label for="btn-menu">✖️</label>
         </div>
@@ -56,46 +59,45 @@
             <section class="card">
                 <h2>QUEM</h2>
                 <p>somos?</p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, nisi? Dicta, deleniti eveniet.
-                Praesentium voluptatum adipisci dolores sint earum ratione, recusandae a sit doloribus totam corporis!
-                Expedita ipsam dolore laborum.
+                A MetaAssist, companhia desenvolvedora da Morgan, foi fundada em 2020 em meio a pandemia do covid-19,
+                visando proporcionar as pessoas uma saída para aquele momento, por meio de conversas descontraídas
+                e meios para assisti-las. Embora o mercada de assistentes virtuais já conte com nomes de peso, a Morgan
+                conta com um diferencial, nossos usuários podem associar-se e criar funções personalizadas.
                 <br>
                 <div class="popover" onclick="invisible('noshist')">
-                    <button onclick="visible('noshist')" class="b-hist">NOSSA HISTÓRIA</button>
-                    <div class="noshist">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, nesciunt odio
-                        ratione minima atque necessitatibus error eaque odit, laboriosam vel a possimus commodi mollitia
-                        cum aliquid reiciendis cumque ipsum ducimus!
+                    <button onclick="visible('noshist')">NOSSA HISTÓRIA</button>
+                    <div class="noshist">Nossos fundadores, Murilo Tegani, Lorran Vitor e Gabriel Santos, iniciaram o
+                        projeto Morgan Assemble como o seu Trabalho de Conclusão de Curso (TCC), seu maior objetivo era
+                        e continua sendo, tornar essa assistente algo grandioso, que conectar-se-á a muitos!
                     </div>
                 </div>
             </section>
             <section class="card">
                 <h2>O QUE</h2>
                 <p>fazemos?</p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste delectus nam quibusdam ea dolorem, alias
-                cupiditate, qui, omnis autem modi velit. Ad ab officiis ratione expedita nam! Ut, architecto
-                praesentium.
+                Nossa empresa é especialista no desenvolvimento de soluções de software para a Indústria 4.0 e a Web 3.0,
+                ou seja, Assistentes virtuais, Machine Learning, IoT, BlockChain, Cryptocurrency e NFTs etc. Para saber
+                mais, entre em contato conosco direto pelo WhatsApp, nosso número encontra-se no menu no campo 'Contato'.
                 <br>
                 <div class="popover" onclick="invisible('serviços')">
-                    <button onclick="visible('serviços')" class="b-serv">NOSSOS SERVIÇOS </button>
+                    <button onclick="visible('serviços')">NOSSOS SERVIÇOS </button>
                     <div class="serviços">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, nobis maxime. Esse porro
-                        architecto voluptatem expedita ad a nihil tempora blanditiis autem exercitationem, repudiandae
-                        quod.
-                        Sit voluptatibus non tempora voluptates.
+                        Atualmente os nossos serviços incluem a Assistente Virtual Morgan e consultoria de investimentos
+                        em criptoativos.
                     </div>
                 </div>
             </section>
             <section class="card">
                 <h2>COMO</h2>
                 <p>se associar?</p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum animi obcaecati ab error excepturi tempora
-                reiciendis illum deleniti atque voluptatum. Itaque cum ad excepturi provident consequuntur numquam ipsum
-                reiciendis minus.
+                Gostaria de fazer parte do projeto Morgan Assemble? e poder criar suas próprias funções, moldando a
+                assistente a sua própria maneira e estilo? Então clique em 'ASSOCIE-SE', um e-mail será encaminhado para
+                a nossa equipe que entrará em contato contigo.
                 <br>
                 <div class="popover">
-                    <button onclick="visible('associe-se')" class="b-asso">ASSOCIE-SE</button>
+                    <button onclick="visible('associe-se')">ASSOCIE-SE</button>
                     <div class="associe-se">
-                        Já possui cadastro? Informe seu email e entraremos em contato.
+                        Já é um associado? Informe seu email e entraremos em contato.
                         <form onsubmit="successMessage(event, 'Email enviado com sucesso')">
                             <input id="email" type="email" placeholder="seu@email.com" required>
                             <button type="submit">enviar</button>

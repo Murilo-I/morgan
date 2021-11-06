@@ -69,6 +69,8 @@ footer {
     margin: 20px;
     border-radius: 10px;
     max-width: 28vw;
+    text-align: justify;
+    font-size: 18px;
 }
 
 .popover {
@@ -102,6 +104,33 @@ footer {
     content: " ";
     position: absolute;
     top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: whitesmoke transparent transparent transparent;
+}
+
+.contato {
+    position: absolute;
+    visibility: hidden;
+    font-size: 18px;
+    width: 250px;
+    background: whitesmoke;
+    color: gray;
+    padding: 6px;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    left: 50%;
+    margin-left: -125px;
+    margin-top: 5px;
+}
+
+.contato::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;
     left: 50%;
     margin-left: -5px;
     border-width: 5px;
