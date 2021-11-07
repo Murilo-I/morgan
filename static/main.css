@@ -114,11 +114,10 @@ footer {
 .contato {
     position: absolute;
     visibility: hidden;
-    font-size: 15px;
+    font-size: 17px;
     width: 250px;
     background: whitesmoke;
     color: gray;
-    padding: 6px;
     border-radius: 12px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
     text-align: center;
