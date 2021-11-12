@@ -56,12 +56,12 @@ def criar():
 def atualizar():
     senha = request.form['senha']
     confirma = request.form['confirma']
-    username = dao.buscar_por_id(request.form['username'])
-    email = dao.busca_por_email(request.form['email'])
+    username = request.form['username']
+    email = request.form['email']
     if senha != confirma:
         flash('senha confirmada incorretamente')
         return redirect(url_for('mudar_senha'))
-    elif not username or not email:
+    elif not dao.buscar_por_id(username) or not dao.busca_por_email(email):
         flash('username ou email não reconhecido')
         return redirect(url_for('mudar_senha'))
     else:
