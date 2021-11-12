@@ -74,7 +74,11 @@ def login():
 @app.route('/morgan_assistant/autenticar', methods=['POST'])
 def autenticar():
     usuario = dao.buscar_por_id(request.form['username'])
-    senha_correta = bcrypt.checkpw(request.form['senha'].encode('utf8'), usuario.senha.encode('utf8'))
+    try:
+        senha_correta = bcrypt.checkpw(request.form['senha'].encode('utf8'), usuario.senha.encode('utf8'))
+    except:
+        flash('Falha no login, tente novamente!')
+
     if usuario and senha_correta:
         session['usuario_logado'] = usuario.id
         flash(usuario.id + ' logou com sucesso!')
